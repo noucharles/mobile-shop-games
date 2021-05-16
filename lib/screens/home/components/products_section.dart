@@ -16,7 +16,7 @@ class ProductsSection extends StatelessWidget {
     Key key,
     @required this.sectionTitle,
     @required this.productsStreamController,
-    this.emptyListMessage = "No Products to show here",
+    this.emptyListMessage = "Aucun produit à afficher ici",
     @required this.onProductCardTapped,
   }) : super(key: key);
 
@@ -70,8 +70,8 @@ class ProductsSection extends StatelessWidget {
         return Center(
           child: NothingToShowContainer(
             iconPath: "assets/icons/network_error.svg",
-            primaryMessage: "Something went wrong",
-            secondaryMessage: "Unable to connect to Database",
+            primaryMessage: "Un problème est survenu",
+            secondaryMessage: "Impossible de se connecter à la base de données",
           ),
         );
       },

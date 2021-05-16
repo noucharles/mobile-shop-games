@@ -49,16 +49,16 @@ class HomeScreenDrawer extends StatelessWidget {
           ListTile(
             leading: Icon(Icons.edit_location),
             title: Text(
-              "Manage Addresses",
+              "Gérer les adresses",
               style: TextStyle(fontSize: 16, color: Colors.black),
             ),
             onTap: () async {
               bool allowed = AuthentificationService().currentUserVerified;
               if (!allowed) {
                 final reverify = await showConfirmationDialog(context,
-                    "You haven't verified your email address. This action is only allowed for verified users.",
-                    positiveResponse: "Resend verification email",
-                    negativeResponse: "Go back");
+                    "Vous n'avez pas vérifié votre adresse e-mail. Cette action n'est autorisée que pour les utilisateurs vérifiés.",
+                    positiveResponse: "Renvoyer l'e-mail de vérification",
+                    negativeResponse: "Retourner");
                 if (reverify) {
                   final future = AuthentificationService()
                       .sendVerificationEmailToCurrentUser();
@@ -85,16 +85,16 @@ class HomeScreenDrawer extends StatelessWidget {
           ListTile(
             leading: Icon(Icons.edit_location),
             title: Text(
-              "My Orders",
+              "Mes commandes",
               style: TextStyle(fontSize: 16, color: Colors.black),
             ),
             onTap: () async {
               bool allowed = AuthentificationService().currentUserVerified;
               if (!allowed) {
                 final reverify = await showConfirmationDialog(context,
-                    "You haven't verified your email address. This action is only allowed for verified users.",
-                    positiveResponse: "Resend verification email",
-                    negativeResponse: "Go back");
+                    "Vous n'avez pas vérifié votre adresse e-mail. Cette action n'est autorisée que pour les utilisateurs vérifiés.",
+                    positiveResponse: "Renvoyer l'e-mail de vérification",
+                    negativeResponse: "Retourner");
                 if (reverify) {
                   final future = AuthentificationService()
                       .sendVerificationEmailToCurrentUser();
@@ -103,7 +103,7 @@ class HomeScreenDrawer extends StatelessWidget {
                     builder: (context) {
                       return FutureProgressDialog(
                         future,
-                        message: Text("Resending verification email"),
+                        message: Text("Renvoyer l'e-mail de vérification"),
                       );
                     },
                   );
@@ -122,7 +122,7 @@ class HomeScreenDrawer extends StatelessWidget {
           ListTile(
             leading: Icon(Icons.info),
             title: Text(
-              "About Developer",
+              "À propos des développeurs",
               style: TextStyle(fontSize: 16, color: Colors.black),
             ),
             onTap: () async {
@@ -137,12 +137,12 @@ class HomeScreenDrawer extends StatelessWidget {
           ListTile(
             leading: Icon(Icons.logout),
             title: Text(
-              "Sign out",
+              "Déconnexion",
               style: TextStyle(fontSize: 16, color: Colors.black),
             ),
             onTap: () async {
               final confirmation =
-                  await showConfirmationDialog(context, "Confirm Sign out ?");
+                  await showConfirmationDialog(context, "Confirmer la déconnexion ?");
               if (confirmation) AuthentificationService().signOut();
             },
           ),
@@ -158,14 +158,14 @@ class HomeScreenDrawer extends StatelessWidget {
         color: kTextColor.withOpacity(0.15),
       ),
       accountEmail: Text(
-        user.email ?? "No Email",
+        user.email ?? "Aucun e-mail",
         style: TextStyle(
           fontSize: 15,
           color: Colors.black,
         ),
       ),
       accountName: Text(
-        user.displayName ?? "No Name",
+        user.displayName ?? "Sans nom",
         style: TextStyle(
           fontSize: 18,
           fontWeight: FontWeight.w500,
@@ -199,13 +199,13 @@ class HomeScreenDrawer extends StatelessWidget {
     return ExpansionTile(
       leading: Icon(Icons.person),
       title: Text(
-        "Edit Account",
+        "Modifier le compte",
         style: TextStyle(fontSize: 16, color: Colors.black),
       ),
       children: [
         ListTile(
           title: Text(
-            "Change Display Picture",
+            "Changer l'image d'affichage",
             style: TextStyle(
               color: Colors.black,
               fontSize: 15,
@@ -221,7 +221,7 @@ class HomeScreenDrawer extends StatelessWidget {
         ),
         ListTile(
           title: Text(
-            "Change Display Name",
+            "Modifier le nom",
             style: TextStyle(
               color: Colors.black,
               fontSize: 15,
@@ -237,7 +237,7 @@ class HomeScreenDrawer extends StatelessWidget {
         ),
         ListTile(
           title: Text(
-            "Change Phone Number",
+            "Changer de numéro de téléphone",
             style: TextStyle(
               color: Colors.black,
               fontSize: 15,
@@ -253,7 +253,7 @@ class HomeScreenDrawer extends StatelessWidget {
         ),
         ListTile(
           title: Text(
-            "Change Email",
+            "Changer l'e-mail",
             style: TextStyle(
               color: Colors.black,
               fontSize: 15,
@@ -269,7 +269,7 @@ class HomeScreenDrawer extends StatelessWidget {
         ),
         ListTile(
           title: Text(
-            "Change Password",
+            "Changer le mot de passe",
             style: TextStyle(
               color: Colors.black,
               fontSize: 15,
@@ -291,13 +291,13 @@ class HomeScreenDrawer extends StatelessWidget {
     return ExpansionTile(
       leading: Icon(Icons.business),
       title: Text(
-        "I am Seller",
+        "Je suis vendeur",
         style: TextStyle(fontSize: 16, color: Colors.black),
       ),
       children: [
         ListTile(
           title: Text(
-            "Add New Product",
+            "Ajouter un nouveau produit",
             style: TextStyle(
               color: Colors.black,
               fontSize: 15,
@@ -307,9 +307,9 @@ class HomeScreenDrawer extends StatelessWidget {
             bool allowed = AuthentificationService().currentUserVerified;
             if (!allowed) {
               final reverify = await showConfirmationDialog(context,
-                  "You haven't verified your email address. This action is only allowed for verified users.",
-                  positiveResponse: "Resend verification email",
-                  negativeResponse: "Go back");
+                  "Vous n'avez pas vérifié votre adresse e-mail. Cette action n'est autorisée que pour les utilisateurs vérifiés.",
+                  positiveResponse: "Renvoyer l'e-mail de vérification",
+                  negativeResponse: "Retourner");
               if (reverify) {
                 final future = AuthentificationService()
                     .sendVerificationEmailToCurrentUser();
@@ -318,7 +318,7 @@ class HomeScreenDrawer extends StatelessWidget {
                   builder: (context) {
                     return FutureProgressDialog(
                       future,
-                      message: Text("Resending verification email"),
+                      message: Text("Renvoyer l'e-mail de vérification"),
                     );
                   },
                 );
@@ -331,7 +331,7 @@ class HomeScreenDrawer extends StatelessWidget {
         ),
         ListTile(
           title: Text(
-            "Manage My Products",
+            "Gérer mes produits",
             style: TextStyle(
               color: Colors.black,
               fontSize: 15,
@@ -341,9 +341,9 @@ class HomeScreenDrawer extends StatelessWidget {
             bool allowed = AuthentificationService().currentUserVerified;
             if (!allowed) {
               final reverify = await showConfirmationDialog(context,
-                  "You haven't verified your email address. This action is only allowed for verified users.",
-                  positiveResponse: "Resend verification email",
-                  negativeResponse: "Go back");
+                  "Vous n'avez pas vérifié votre adresse e-mail. Cette action n'est autorisée que pour les utilisateurs vérifiés.",
+                  positiveResponse: "Renvoyer l'e-mail de vérification",
+                  negativeResponse: "Retourner");
               if (reverify) {
                 final future = AuthentificationService()
                     .sendVerificationEmailToCurrentUser();
@@ -352,7 +352,7 @@ class HomeScreenDrawer extends StatelessWidget {
                   builder: (context) {
                     return FutureProgressDialog(
                       future,
-                      message: Text("Resending verification email"),
+                      message: Text("Renvoyer l'e-mail de vérification"),
                     );
                   },
                 );

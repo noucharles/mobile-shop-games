@@ -28,21 +28,22 @@ class Body extends StatelessWidget {
               children: [
                 SizedBox(height: getProportionateScreenHeight(10)),
                 Text(
-                  "About Developer",
+                  "À propos des développeurs",
                   style: headingStyle,
                 ),
                 SizedBox(height: getProportionateScreenHeight(50)),
                 InkWell(
                   onTap: () async {
                     const String linkedInUrl =
-                        "https://www.linkedin.com/in/imrb7here";
+                    // https://www.linkedin.com/in/imrb7here
+                    "https://www.linkedin.com/in/charles-noumangue-kuinsi-24765a199";
                     await launchUrl(linkedInUrl);
                   },
                   child: buildDeveloperAvatar(),
                 ),
                 SizedBox(height: getProportionateScreenHeight(30)),
                 Text(
-                  '" Rahul Badgujar "',
+                  '" Charles N. & Franck N."',
                   style: TextStyle(
                     fontSize: 25,
                     fontWeight: FontWeight.w900,
@@ -68,7 +69,7 @@ class Body extends StatelessWidget {
                       iconSize: 40,
                       padding: EdgeInsets.all(16),
                       onPressed: () async {
-                        const String githubUrl = "https://github.com/imRB7here";
+                        const String githubUrl = "https://github.com/noucharles";
                         await launchUrl(githubUrl);
                       },
                     ),
@@ -81,7 +82,7 @@ class Body extends StatelessWidget {
                       padding: EdgeInsets.all(16),
                       onPressed: () async {
                         const String linkedInUrl =
-                            "https://www.linkedin.com/in/imrb7here";
+                            "https://www.linkedin.com/in/charles-noumangue-kuinsi-24765a199";
                         await launchUrl(linkedInUrl);
                       },
                     ),
@@ -92,7 +93,7 @@ class Body extends StatelessWidget {
                       padding: EdgeInsets.all(16),
                       onPressed: () async {
                         const String instaUrl =
-                            "https://www.instagram.com/_rahul.badgujar_";
+                            "https://www.instagram.com/n.k.charles";
                         await launchUrl(instaUrl);
                       },
                     ),
@@ -114,7 +115,7 @@ class Body extends StatelessWidget {
                       },
                     ),
                     Text(
-                      "Liked the app?",
+                      "J'ai aimé l'application ?",
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
                         fontSize: 18,
@@ -167,10 +168,10 @@ class Body extends StatelessWidget {
       if (await canLaunch(url)) {
         await launch(url);
       } else {
-        Logger().i("LinkedIn URL was unable to launch");
+        Logger().i("L'URL LinkedIn n'a pas pu se lancer");
       }
     } catch (e) {
-      Logger().e("Exception while launching URL: $e");
+      Logger().e("Exception lors du lancement de l'URL: $e");
     }
   }
 
@@ -208,9 +209,9 @@ class Body extends StatelessWidget {
       try {
         reviewAdded = await AppReviewDatabaseHelper().editAppReview(result);
         if (reviewAdded == true) {
-          snackbarMessage = "Feedback submitted successfully";
+          snackbarMessage = "Commentaires soumis avec succès";
         } else {
-          throw "Coulnd't add feeback due to unknown reason";
+          throw "N'ajoutez pas de retour pour une raison inconnue";
         }
       } on FirebaseException catch (e) {
         Logger().w("Firebase Exception: $e");

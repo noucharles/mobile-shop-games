@@ -108,13 +108,13 @@ class _BodyState extends State<Body> {
                             builder: (context) => SearchResultScreen(
                               searchQuery: query,
                               searchResultProductsId: searchedProductsId,
-                              searchIn: "All Products",
+                              searchIn: "Tous les produits",
                             ),
                           ),
                         );
                         await refreshPage();
                       } else {
-                        throw "Couldn't perform search due to some unknown reason";
+                        throw "Impossible d'effectuer la recherche pour une raison inconnue";
                       }
                     } catch (e) {
                       final error = e.toString();
@@ -131,9 +131,9 @@ class _BodyState extends State<Body> {
                         AuthentificationService().currentUserVerified;
                     if (!allowed) {
                       final reverify = await showConfirmationDialog(context,
-                          "You haven't verified your email address. This action is only allowed for verified users.",
-                          positiveResponse: "Resend verification email",
-                          negativeResponse: "Go back");
+                          "Vous n'avez pas vérifié votre adresse e-mail. Cette action n'est autorisée que pour les utilisateurs vérifiés.",
+                          positiveResponse: "Renvoyer l'e-mail de vérification",
+                          negativeResponse: "Retourner");
                       if (reverify) {
                         final future = AuthentificationService()
                             .sendVerificationEmailToCurrentUser();
@@ -142,7 +142,7 @@ class _BodyState extends State<Body> {
                           builder: (context) {
                             return FutureProgressDialog(
                               future,
-                              message: Text("Resending verification email"),
+                              message: Text("Renvoyer l'e-mail de vérification"),
                             );
                           },
                         );
@@ -196,9 +196,9 @@ class _BodyState extends State<Body> {
                 SizedBox(
                   height: SizeConfig.screenHeight * 0.5,
                   child: ProductsSection(
-                    sectionTitle: "Products You Like",
+                    sectionTitle: "Produits que vous aimez",
                     productsStreamController: favouriteProductsStream,
-                    emptyListMessage: "Add Product to Favourites",
+                    emptyListMessage: "Ajouter un produit aux favoris",
                     onProductCardTapped: onProductCardTapped,
                   ),
                 ),
@@ -206,9 +206,9 @@ class _BodyState extends State<Body> {
                 SizedBox(
                   height: SizeConfig.screenHeight * 0.8,
                   child: ProductsSection(
-                    sectionTitle: "Explore All Products",
+                    sectionTitle: "Explorer tous les produits",
                     productsStreamController: allProductsStream,
-                    emptyListMessage: "Looks like all Stores are closed",
+                    emptyListMessage: "Aucun produit disponible",
                     onProductCardTapped: onProductCardTapped,
                   ),
                 ),
