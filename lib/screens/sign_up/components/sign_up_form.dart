@@ -46,7 +46,7 @@ class _SignUpFormState extends State<SignUpForm> {
             buildConfirmPasswordFormField(),
             SizedBox(height: getProportionateScreenHeight(40)),
             DefaultButton(
-              text: "Sign up",
+              text: "S'inscrire",
               press: signUpButtonCallback,
             ),
           ],
@@ -60,7 +60,7 @@ class _SignUpFormState extends State<SignUpForm> {
       controller: confirmPasswordFieldController,
       obscureText: true,
       decoration: InputDecoration(
-        hintText: "Re-enter your password",
+        hintText: "Entrez à nouveau votre mot de passe",
         labelText: "Confirm Password",
         floatingLabelBehavior: FloatingLabelBehavior.always,
         suffixIcon: CustomSuffixIcon(
@@ -87,7 +87,7 @@ class _SignUpFormState extends State<SignUpForm> {
       controller: emailFieldController,
       keyboardType: TextInputType.emailAddress,
       decoration: InputDecoration(
-        hintText: "Enter your email",
+        hintText: "Entrez votre Email",
         labelText: "Email",
         floatingLabelBehavior: FloatingLabelBehavior.always,
         suffixIcon: CustomSuffixIcon(
@@ -111,7 +111,7 @@ class _SignUpFormState extends State<SignUpForm> {
       controller: passwordFieldController,
       obscureText: true,
       decoration: InputDecoration(
-        hintText: "Enter your password",
+        hintText: "Tapez votre mot de passe",
         labelText: "Password",
         floatingLabelBehavior: FloatingLabelBehavior.always,
         suffixIcon: CustomSuffixIcon(
@@ -147,13 +147,13 @@ class _SignUpFormState extends State<SignUpForm> {
           builder: (context) {
             return FutureProgressDialog(
               signUpFuture,
-              message: Text("Creating new account"),
+              message: Text("Créer un nouveau compte"),
             );
           },
         );
         if (signUpStatus == true) {
           snackbarMessage =
-              "Registered successfully, Please verify your email id";
+              "Enregistré avec succès, veuillez vérifier votre adresse e-mail";
         } else {
           throw FirebaseSignUpAuthUnknownReasonFailureException();
         }

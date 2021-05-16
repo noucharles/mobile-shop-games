@@ -15,18 +15,18 @@ class Body extends StatelessWidget {
             children: [
               SizedBox(height: SizeConfig.screenHeight * 0.02),
               Text(
-                "Register Account",
+                "Créer un compte",
                 style: headingStyle,
               ),
               Text(
-                "Complete your details or continue \nwith social media",
+                "Complétez vos coordonnées ou continuez avec les réseaux sociaux",
                 textAlign: TextAlign.center,
               ),
               SizedBox(height: SizeConfig.screenHeight * 0.07),
               SignUpForm(),
               SizedBox(height: getProportionateScreenHeight(20)),
               Text(
-                "By continuing your confirm that you agree \nwith our Terms and Conditions",
+                "En continuant, vous confirmez que vous acceptez nos conditions générales",
                 textAlign: TextAlign.center,
               ),
               SizedBox(height: getProportionateScreenHeight(20)),

@@ -21,11 +21,11 @@ class Body extends StatelessWidget {
               children: [
                 SizedBox(height: SizeConfig.screenHeight * 0.04),
                 Text(
-                  "Welcome Back",
+                  "Content de vous revoir",
                   style: headingStyle,
                 ),
                 Text(
-                  "Sign in with your email and password",
+                  "Connectez-vous avec votre email et votre mot de passe",
                   textAlign: TextAlign.center,
                 ),
                 SizedBox(height: SizeConfig.screenHeight * 0.08),

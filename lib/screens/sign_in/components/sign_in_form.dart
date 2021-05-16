@@ -43,7 +43,7 @@ class _SignInFormState extends State<SignInForm> {
           buildForgotPasswordWidget(context),
           SizedBox(height: getProportionateScreenHeight(30)),
           DefaultButton(
-            text: "Sign in",
+            text: "S'identifier",
             press: signInButtonCallback,
           ),
         ],
@@ -64,7 +64,7 @@ class _SignInFormState extends State<SignInForm> {
                 ));
           },
           child: Text(
-            "Forgot Password",
+            "Mot de passe oublié",
             style: TextStyle(
               decoration: TextDecoration.underline,
             ),
@@ -79,7 +79,7 @@ class _SignInFormState extends State<SignInForm> {
       controller: passwordFieldController,
       obscureText: true,
       decoration: InputDecoration(
-        hintText: "Enter your password",
+        hintText: "Tapez votre mot de passe",
         labelText: "Password",
         floatingLabelBehavior: FloatingLabelBehavior.always,
         suffixIcon: CustomSuffixIcon(
@@ -103,7 +103,7 @@ class _SignInFormState extends State<SignInForm> {
       controller: emailFieldController,
       keyboardType: TextInputType.emailAddress,
       decoration: InputDecoration(
-        hintText: "Enter your email",
+        hintText: "Entrez votre Email",
         labelText: "Email",
         floatingLabelBehavior: FloatingLabelBehavior.always,
         suffixIcon: CustomSuffixIcon(
@@ -139,12 +139,12 @@ class _SignInFormState extends State<SignInForm> {
           builder: (context) {
             return FutureProgressDialog(
               signInFuture,
-              message: Text("Signing in to account"),
+              message: Text("Connexion au compte"),
             );
           },
         );
         if (signInStatus == true) {
-          snackbarMessage = "Signed In Successfully";
+          snackbarMessage = "Connexion réussie";
         } else {
           throw FirebaseSignInAuthUnknownReasonFailure();
         }
