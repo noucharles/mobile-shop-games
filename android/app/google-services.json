@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "22703438825",
+    "project_id": "tutoreapp-960af",
+    "storage_bucket": "tutoreapp-960af.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:22703438825:android:5c33d34a6b83231dece978",
+        "android_client_info": {
+          "package_name": "com.example.e_commerce_app_flutter"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "22703438825-98r49t4ductdn012pu5pljc7rn3ngqef.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBp1fYg4RrwNVnhKkY9mWYJRbJIiY6LbjA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "22703438825-98r49t4ductdn012pu5pljc7rn3ngqef.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
