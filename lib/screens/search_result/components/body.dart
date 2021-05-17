@@ -30,7 +30,7 @@ class Body extends StatelessWidget {
               children: [
                 SizedBox(height: getProportionateScreenHeight(10)),
                 Text(
-                  "Search Result",
+                  "Résultat de la recherche",
                   style: headingStyle,
                 ),
                 Text.rich(
@@ -116,8 +116,8 @@ class Body extends StatelessWidget {
           return Center(
             child: NothingToShowContainer(
               iconPath: "assets/icons/search_no_found.svg",
-              secondaryMessage: "Found 0 Products",
-              primaryMessage: "Try another search keyword",
+              secondaryMessage: "0 produits trouvés",
+              primaryMessage: "Essayez un autre mot-clé de recherche",
             ),
           );
         },

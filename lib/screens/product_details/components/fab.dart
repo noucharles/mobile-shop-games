@@ -22,9 +22,9 @@ class AddToCartFAB extends StatelessWidget {
         bool allowed = AuthentificationService().currentUserVerified;
         if (!allowed) {
           final reverify = await showConfirmationDialog(context,
-              "You haven't verified your email address. This action is only allowed for verified users.",
-              positiveResponse: "Resend verification email",
-              negativeResponse: "Go back");
+              "Vous n'avez pas vérifié votre adresse e-mail. Cette action n'est autorisée que pour les utilisateurs vérifiés.",
+              positiveResponse: "Renvoyer l'e-mail de vérification",
+              negativeResponse: "Retourner");
           if (reverify) {
             final future =
                 AuthentificationService().sendVerificationEmailToCurrentUser();
@@ -33,7 +33,7 @@ class AddToCartFAB extends StatelessWidget {
               builder: (context) {
                 return FutureProgressDialog(
                   future,
-                  message: Text("Resending verification email"),
+                  message: Text("Renvoyer l'e-mail de vérification"),
                 );
               },
             );
@@ -46,16 +46,16 @@ class AddToCartFAB extends StatelessWidget {
           addedSuccessfully =
               await UserDatabaseHelper().addProductToCart(productId);
           if (addedSuccessfully == true) {
-            snackbarMessage = "Product added successfully";
+            snackbarMessage = "Produit ajouté avec succès";
           } else {
-            throw "Coulnd't add product due to unknown reason";
+            throw "Ne pas ajouter de produit pour une raison inconnue";
           }
         } on FirebaseException catch (e) {
           Logger().w("Firebase Exception: $e");
           snackbarMessage = "Something went wrong";
         } catch (e) {
           Logger().w("Unknown Exception: $e");
-          snackbarMessage = "Something went wrong";
+          snackbarMessage = "Un problème est survenu";
         } finally {
           Logger().i(snackbarMessage);
           ScaffoldMessenger.of(context).showSnackBar(

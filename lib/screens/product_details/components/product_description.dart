@@ -95,7 +95,7 @@ class ProductDescription extends StatelessWidget {
             ),
             const SizedBox(height: 16),
             ExpandableText(
-              title: "Highlights",
+              title: "Points forts",
               content: product.highlights,
             ),
             const SizedBox(height: 16),
@@ -106,7 +106,7 @@ class ProductDescription extends StatelessWidget {
             const SizedBox(height: 16),
             Text.rich(
               TextSpan(
-                text: "Sold by ",
+                text: "Vendu par",
                 style: TextStyle(
                   fontSize: 15,
                   fontWeight: FontWeight.bold,
