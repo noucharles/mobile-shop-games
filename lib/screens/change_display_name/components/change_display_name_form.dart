@@ -43,7 +43,7 @@ class _ChangeDisplayNameFormState extends State<ChangeDisplayNameForm> {
           buildNewDisplayNameField(),
           SizedBox(height: SizeConfig.screenHeight * 0.2),
           DefaultButton(
-            text: "Change Display Name",
+            text: "Modifier le nom",
             press: () {
               final uploadFuture = changeDisplayNameButtonCallback();
               showDialog(
@@ -51,12 +51,12 @@ class _ChangeDisplayNameFormState extends State<ChangeDisplayNameForm> {
                 builder: (context) {
                   return FutureProgressDialog(
                     uploadFuture,
-                    message: Text("Updating Display Name"),
+                    message: Text("Mise à jour du nom"),
                   );
                 },
               );
               ScaffoldMessenger.of(context).showSnackBar(
-                  SnackBar(content: Text("Display Name updated")));
+                  SnackBar(content: Text("Nom mis à jour")));
             },
           ),
         ],
@@ -71,14 +71,14 @@ class _ChangeDisplayNameFormState extends State<ChangeDisplayNameForm> {
       controller: newDisplayNameController,
       keyboardType: TextInputType.name,
       decoration: InputDecoration(
-        hintText: "Enter New Display Name",
-        labelText: "New Display Name",
+        hintText: "Entrez un nouveau nom",
+        labelText: "Nouveau nom",
         floatingLabelBehavior: FloatingLabelBehavior.always,
         suffixIcon: Icon(Icons.person),
       ),
       validator: (value) {
         if (newDisplayNameController.text.isEmpty) {
-          return "Display Name cannot be empty";
+          return "Le nom ne peut pas être vide";
         }
         return null;
       },
@@ -96,8 +96,8 @@ class _ChangeDisplayNameFormState extends State<ChangeDisplayNameForm> {
         final textField = TextFormField(
           controller: currentDisplayNameController,
           decoration: InputDecoration(
-            hintText: "No Display Name available",
-            labelText: "Current Display Name",
+            hintText: "Aucun nom disponible",
+            labelText: "Nom actuel",
             floatingLabelBehavior: FloatingLabelBehavior.always,
             suffixIcon: Icon(Icons.person),
           ),
@@ -115,7 +115,7 @@ class _ChangeDisplayNameFormState extends State<ChangeDisplayNameForm> {
       _formKey.currentState.save();
       await AuthentificationService()
           .updateCurrentUserDisplayName(newDisplayNameController.text);
-      print("Display Name updated to ${newDisplayNameController.text} ...");
+      print("Nom mis à jour en ${newDisplayNameController.text} ...");
     }
   }
 }

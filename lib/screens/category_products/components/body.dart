@@ -77,7 +77,7 @@ class _BodyState extends State<Body> {
                             return Center(
                               child: NothingToShowContainer(
                                 secondaryMessage:
-                                    "No Products in ${EnumToString.convertToString(widget.productType)}",
+                                    "Aucun produit dans ${EnumToString.convertToString(widget.productType)}",
                               ),
                             );
                           }
@@ -95,8 +95,8 @@ class _BodyState extends State<Body> {
                         return Center(
                           child: NothingToShowContainer(
                             iconPath: "assets/icons/network_error.svg",
-                            primaryMessage: "Something went wrong",
-                            secondaryMessage: "Unable to connect to Database",
+                            primaryMessage: "Un problème est survenu",
+                            secondaryMessage: "Impossible de se connecter à la base de données",
                           ),
                         );
                       },
@@ -147,7 +147,7 @@ class _BodyState extends State<Body> {
                   );
                   await refreshPage();
                 } else {
-                  throw "Couldn't perform search due to some unknown reason";
+                  throw "Impossible d'effectuer la recherche pour une raison inconnue";
                 }
               } catch (e) {
                 final error = e.toString();

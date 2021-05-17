@@ -55,7 +55,7 @@ class _BodyState extends State<Body> {
                 children: [
                   SizedBox(height: getProportionateScreenHeight(10)),
                   Text(
-                    "Your Cart",
+                    "Votre panier",
                     style: headingStyle,
                   ),
                   SizedBox(height: getProportionateScreenHeight(20)),
@@ -89,7 +89,7 @@ class _BodyState extends State<Body> {
             return Center(
               child: NothingToShowContainer(
                 iconPath: "assets/icons/empty_cart.svg",
-                secondaryMessage: "Your cart is empty",
+                secondaryMessage: "Votre panier est vide",
               ),
             );
           }
@@ -97,7 +97,7 @@ class _BodyState extends State<Body> {
           return Column(
             children: [
               DefaultButton(
-                text: "Proceed to Payment",
+                text: "Procéder au paiement",
                 press: () {
                   bottomSheetHandler = Scaffold.of(context).showBottomSheet(
                     (context) {
@@ -136,8 +136,8 @@ class _BodyState extends State<Body> {
         return Center(
           child: NothingToShowContainer(
             iconPath: "assets/icons/network_error.svg",
-            primaryMessage: "Something went wrong",
-            secondaryMessage: "Unable to connect to Database",
+            primaryMessage: "Un problème est survenu",
+            secondaryMessage: "Impossible de se connecter à la base de données",
           ),
         );
       },
@@ -158,7 +158,7 @@ class _BodyState extends State<Body> {
         if (direction == DismissDirection.startToEnd) {
           final confirmation = await showConfirmationDialog(
             context,
-            "Remove Product from Cart?",
+            "Supprimer le produit du panier?",
           );
           if (confirmation) {
             if (direction == DismissDirection.startToEnd) {
@@ -168,17 +168,17 @@ class _BodyState extends State<Body> {
                 result = await UserDatabaseHelper()
                     .removeProductFromCart(cartItemId);
                 if (result == true) {
-                  snackbarMessage = "Product removed from cart successfully";
+                  snackbarMessage = "Produit supprimé du panier avec succès";
                   await refreshPage();
                 } else {
-                  throw "Coulnd't remove product from cart due to unknown reason";
+                  throw "Ne supprime pas le produit du panier pour une raison inconnue";
                 }
               } on FirebaseException catch (e) {
                 Logger().w("Firebase Exception: $e");
-                snackbarMessage = "Something went wrong";
+                snackbarMessage = "Un problème est survenu";
               } catch (e) {
                 Logger().w("Unknown Exception: $e");
-                snackbarMessage = "Something went wrong";
+                snackbarMessage = "Un problème est survenu";
               } finally {
                 Logger().i(snackbarMessage);
                 ScaffoldMessenger.of(context).showSnackBar(
@@ -339,7 +339,7 @@ class _BodyState extends State<Body> {
           ),
           SizedBox(width: 4),
           Text(
-            "Delete",
+            "Effacer",
             style: TextStyle(
               color: Colors.white,
               fontWeight: FontWeight.bold,
@@ -355,7 +355,7 @@ class _BodyState extends State<Body> {
     shutBottomSheet();
     final confirmation = await showConfirmationDialog(
       context,
-      "This is just a Project Testing App so, no actual Payment Interface is available.\nDo you want to proceed for Mock Ordering of Products?",
+      "Ceci est juste une application de test de projet, donc aucune interface de paiement n'est disponible.Voulez-vous procéder à la commande fictive de produits?",
     );
     if (confirmation == false) {
       return;
@@ -377,9 +377,9 @@ class _BodyState extends State<Body> {
           addedProductsToMyProducts =
               await UserDatabaseHelper().addToMyOrders(orderedProducts);
           if (addedProductsToMyProducts) {
-            snackbarmMessage = "Products ordered Successfully";
+            snackbarmMessage = "Produits commandés avec succès";
           } else {
-            throw "Could not order products due to unknown issue";
+            throw "Impossible de commander des produits en raison d'un problème inconnu";
           }
         } on FirebaseException catch (e) {
           Logger().e(e.toString());
@@ -390,19 +390,19 @@ class _BodyState extends State<Body> {
         } finally {
           ScaffoldMessenger.of(context).showSnackBar(
             SnackBar(
-              content: Text(snackbarmMessage ?? "Something went wrong"),
+              content: Text(snackbarmMessage ?? "Un problème est survenu"),
             ),
           );
         }
       } else {
-        throw "Something went wrong while clearing cart";
+        throw "Une erreur s'est produite lors de la suppression du panier";
       }
       await showDialog(
         context: context,
         builder: (context) {
           return FutureProgressDialog(
             orderFuture,
-            message: Text("Placing the Order"),
+            message: Text("Passer la commande"),
           );
         },
       );
@@ -410,7 +410,7 @@ class _BodyState extends State<Body> {
       Logger().e(e.toString());
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
-          content: Text("Something went wrong"),
+          content: Text("Un problème est survenu"),
         ),
       );
     });
@@ -419,7 +419,7 @@ class _BodyState extends State<Body> {
       builder: (context) {
         return FutureProgressDialog(
           orderFuture,
-          message: Text("Placing the Order"),
+          message: Text("Passer la commande"),
         );
       },
     );
@@ -439,12 +439,12 @@ class _BodyState extends State<Body> {
       if (status) {
         await refreshPage();
       } else {
-        throw "Couldn't perform the operation due to some unknown issue";
+        throw "Impossible d'effectuer l'opération en raison d'un problème inconnu";
       }
     }).catchError((e) {
       Logger().e(e.toString());
       ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-        content: Text("Something went wrong"),
+        content: Text("Un problème est survenu"),
       ));
     });
     await showDialog(
@@ -452,7 +452,7 @@ class _BodyState extends State<Body> {
       builder: (context) {
         return FutureProgressDialog(
           future,
-          message: Text("Please wait"),
+          message: Text("S'il vous plaît, attendez"),
         );
       },
     );
@@ -465,12 +465,12 @@ class _BodyState extends State<Body> {
       if (status) {
         await refreshPage();
       } else {
-        throw "Couldn't perform the operation due to some unknown issue";
+        throw "Impossible d'effectuer l'opération en raison d'un problème inconnu";
       }
     }).catchError((e) {
       Logger().e(e.toString());
       ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-        content: Text("Something went wrong"),
+        content: Text("Un problème est survenu"),
       ));
     });
     await showDialog(
@@ -478,7 +478,7 @@ class _BodyState extends State<Body> {
       builder: (context) {
         return FutureProgressDialog(
           future,
-          message: Text("Please wait"),
+          message: Text("S'il vous plaît, attendez"),
         );
       },
     );
