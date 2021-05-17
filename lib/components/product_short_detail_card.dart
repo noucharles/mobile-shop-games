@@ -37,7 +37,7 @@ class ProductShortDetailCard extends StatelessWidget {
                               product.images[0],
                               fit: BoxFit.contain,
                             )
-                          : Text("No Image"),
+                          : Text("Pas d'image"),
                     ),
                   ),
                 ),

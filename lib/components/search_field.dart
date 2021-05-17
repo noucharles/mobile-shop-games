@@ -22,7 +22,7 @@ class SearchField extends StatelessWidget {
         decoration: InputDecoration(
           enabledBorder: InputBorder.none,
           focusedBorder: InputBorder.none,
-          hintText: "Search Product",
+          hintText: "Rechercher un produit",
           prefixIcon: Icon(Icons.search),
           contentPadding: EdgeInsets.symmetric(
               horizontal: getProportionateScreenWidth(20),
