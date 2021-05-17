@@ -51,7 +51,7 @@ class _BodyState extends State<Body> {
                 children: [
                   SizedBox(height: getProportionateScreenHeight(10)),
                   Text(
-                    "Your Orders",
+                    "Vos commandes",
                     style: headingStyle,
                   ),
                   SizedBox(height: getProportionateScreenHeight(20)),
@@ -83,7 +83,7 @@ class _BodyState extends State<Body> {
             return Center(
               child: NothingToShowContainer(
                 iconPath: "assets/icons/empty_bag.svg",
-                secondaryMessage: "Order something to show here",
+                secondaryMessage: "Commandez quelque chose à montrer ici",
               ),
             );
           }
@@ -125,8 +125,8 @@ class _BodyState extends State<Body> {
         return Center(
           child: NothingToShowContainer(
             iconPath: "assets/icons/network_error.svg",
-            primaryMessage: "Something went wrong",
-            secondaryMessage: "Unable to connect to Database",
+            primaryMessage: "Un problème est survenu",
+            secondaryMessage: "Impossible de se connecter à la base de données",
           ),
         );
       },
@@ -159,7 +159,7 @@ class _BodyState extends State<Body> {
                   ),
                   child: Text.rich(
                     TextSpan(
-                      text: "Ordered on:  ",
+                      text: "Commandé le:  ",
                       style: TextStyle(
                         color: Colors.black,
                         fontSize: 12,
@@ -253,9 +253,9 @@ class _BodyState extends State<Body> {
                               .addProductReview(product.id, result);
                           if (reviewAdded == true) {
                             snackbarMessage =
-                                "Product review added successfully";
+                                "Avis sur le produit ajouté avec succès";
                           } else {
-                            throw "Coulnd't add product review due to unknown reason";
+                            throw "Pas d'ajout d'avis sur le produit pour une raison inconnue";
                           }
                         } on FirebaseException catch (e) {
                           Logger().w("Firebase Exception: $e");
@@ -275,7 +275,7 @@ class _BodyState extends State<Body> {
                       await refreshPage();
                     },
                     child: Text(
-                      "Give Product Review",
+                      "Donnez votre avis sur le produit",
                       style: TextStyle(
                         color: Colors.white,
                         fontWeight: FontWeight.w600,

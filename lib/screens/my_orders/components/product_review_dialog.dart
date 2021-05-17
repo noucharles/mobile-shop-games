@@ -43,7 +43,7 @@ class ProductReviewDialog extends StatelessWidget {
           child: TextFormField(
             initialValue: review.feedback,
             decoration: InputDecoration(
-              hintText: "Feedback of Product",
+              hintText: "Feedback sur le produit",
               labelText: "Feedback (optional)",
               floatingLabelBehavior: FloatingLabelBehavior.always,
             ),
@@ -57,7 +57,7 @@ class ProductReviewDialog extends StatelessWidget {
         SizedBox(height: getProportionateScreenHeight(10)),
         Center(
           child: DefaultButton(
-            text: "Submit",
+            text: "Soumettre",
             press: () {
               Navigator.pop(context, review);
             },

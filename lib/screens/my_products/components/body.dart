@@ -50,9 +50,9 @@ class _BodyState extends State<Body> {
               child: Column(
                 children: [
                   SizedBox(height: getProportionateScreenHeight(20)),
-                  Text("Your Products", style: headingStyle),
+                  Text("Vos produits", style: headingStyle),
                   Text(
-                    "Swipe LEFT to Edit, Swipe RIGHT to Delete",
+                    "Balayez vers la GAUCHE pour modifier, glissez vers la DROITE pour supprimer",
                     style: TextStyle(fontSize: 12),
                   ),
                   SizedBox(height: getProportionateScreenHeight(30)),
@@ -67,7 +67,7 @@ class _BodyState extends State<Body> {
                             return Center(
                               child: NothingToShowContainer(
                                 secondaryMessage:
-                                    "Add your first Product to Sell",
+                                    "Ajoutez votre premier produit à vendre",
                               ),
                             );
                           }
@@ -90,8 +90,8 @@ class _BodyState extends State<Body> {
                         return Center(
                           child: NothingToShowContainer(
                             iconPath: "assets/icons/network_error.svg",
-                            primaryMessage: "Something went wrong",
-                            secondaryMessage: "Unable to connect to Database",
+                            primaryMessage: "Un problème est survenu",
+                            secondaryMessage: "Impossible de se connecter à la base de données",
                           ),
                         );
                       },
@@ -165,7 +165,7 @@ class _BodyState extends State<Body> {
       confirmDismiss: (direction) async {
         if (direction == DismissDirection.startToEnd) {
           final confirmation = await showConfirmationDialog(
-              context, "Are you sure to Delete Product?");
+              context, "Êtes-vous sûr de vouloir supprimer le produit ?");
           if (confirmation) {
             for (int i = 0; i < product.images.length; i++) {
               String path =
@@ -178,7 +178,7 @@ class _BodyState extends State<Body> {
                   return FutureProgressDialog(
                     deletionFuture,
                     message: Text(
-                        "Deleting Product Images ${i + 1}/${product.images.length}"),
+                        "Suppression d'images du produit ${i + 1}/${product.images.length}"),
                   );
                 },
               );
@@ -194,18 +194,18 @@ class _BodyState extends State<Body> {
                 builder: (context) {
                   return FutureProgressDialog(
                     deleteProductFuture,
-                    message: Text("Deleting Product"),
+                    message: Text("Suppression du produit"),
                   );
                 },
               );
               if (productInfoDeleted == true) {
-                snackbarMessage = "Product deleted successfully";
+                snackbarMessage = "Produit supprimé avec succès";
               } else {
-                throw "Coulnd't delete product, please retry";
+                throw "Impossible de supprimer le produit, veuillez réessayer";
               }
             } on FirebaseException catch (e) {
               Logger().w("Firebase Exception: $e");
-              snackbarMessage = "Something went wrong";
+              snackbarMessage = "Un problème est survenu";
             } catch (e) {
               Logger().w("Unknown Exception: $e");
               snackbarMessage = e.toString();
@@ -222,7 +222,7 @@ class _BodyState extends State<Body> {
           return confirmation;
         } else if (direction == DismissDirection.endToStart) {
           final confirmation = await showConfirmationDialog(
-              context, "Are you sure to Edit Product?");
+              context, "Êtes-vous sûr de vouloir éditer ce produit ?");
           if (confirmation) {
             await Navigator.push(
               context,
@@ -261,7 +261,7 @@ class _BodyState extends State<Body> {
           ),
           SizedBox(width: 4),
           Text(
-            "Edit",
+            "Éditer",
             style: TextStyle(
               color: Colors.white,
               fontWeight: FontWeight.bold,
@@ -285,7 +285,7 @@ class _BodyState extends State<Body> {
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
           Text(
-            "Delete",
+            "Supprimer",
             style: TextStyle(
               color: Colors.white,
               fontWeight: FontWeight.bold,
