@@ -42,7 +42,7 @@ class _ChangePhoneNumberFormState extends State<ChangePhoneNumberForm> {
           buildNewPhoneNumberField(),
           SizedBox(height: SizeConfig.screenHeight * 0.2),
           DefaultButton(
-            text: "Update Phone Number",
+            text: "Mettre à jour le numéro de téléphone",
             press: () {
               final updateFuture = updatePhoneNumberButtonCallback();
               showDialog(
@@ -50,7 +50,7 @@ class _ChangePhoneNumberFormState extends State<ChangePhoneNumberForm> {
                 builder: (context) {
                   return FutureProgressDialog(
                     updateFuture,
-                    message: Text("Updating Phone Number"),
+                    message: Text("Mettre à jour le numéro de téléphone"),
                   );
                 },
               );
@@ -73,16 +73,16 @@ class _ChangePhoneNumberFormState extends State<ChangePhoneNumberForm> {
         status = await UserDatabaseHelper()
             .updatePhoneForCurrentUser(newPhoneNumberController.text);
         if (status == true) {
-          snackbarMessage = "Phone updated successfully";
+          snackbarMessage = "Téléphone mis à jour avec succès";
         } else {
-          throw "Coulnd't update phone due to unknown reason";
+          throw "Ne mets pas à jour le numéro pour une raison inconnue";
         }
       } on FirebaseException catch (e) {
         Logger().w("Firebase Exception: $e");
-        snackbarMessage = "Something went wrong";
+        snackbarMessage = "Un problème est survenu";
       } catch (e) {
         Logger().w("Unknown Exception: $e");
-        snackbarMessage = "Something went wrong";
+        snackbarMessage = "Un problème est survenu";
       } finally {
         Logger().i(snackbarMessage);
         ScaffoldMessenger.of(context).showSnackBar(
@@ -99,16 +99,16 @@ class _ChangePhoneNumberFormState extends State<ChangePhoneNumberForm> {
       controller: newPhoneNumberController,
       keyboardType: TextInputType.phone,
       decoration: InputDecoration(
-        hintText: "Enter New Phone Number",
-        labelText: "New Phone Number",
+        hintText: "Entrez un nouveau numéro de téléphone",
+        labelText: "Nouveau numéro",
         floatingLabelBehavior: FloatingLabelBehavior.always,
         suffixIcon: Icon(Icons.phone),
       ),
       validator: (value) {
         if (newPhoneNumberController.text.isEmpty) {
-          return "Phone Number cannot be empty";
-        } else if (newPhoneNumberController.text.length != 10) {
-          return "Only 10 digits allowed";
+          return "Le numéro de téléphone ne peut pas être vide";
+        } else if (newPhoneNumberController.text.length != 9) {
+          return "Seulement 9 chiffres autorisés";
         }
         return null;
       },
@@ -130,8 +130,8 @@ class _ChangePhoneNumberFormState extends State<ChangePhoneNumberForm> {
         final textField = TextFormField(
           controller: currentPhoneNumberController,
           decoration: InputDecoration(
-            hintText: "No Phone Number available",
-            labelText: "Current Phone Number",
+            hintText: "Aucun numéro de téléphone disponible",
+            labelText: "Numéro de téléphone actuel",
             floatingLabelBehavior: FloatingLabelBehavior.always,
             suffixIcon: Icon(Icons.phone),
           ),

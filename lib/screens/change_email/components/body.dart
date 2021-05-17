@@ -18,7 +18,7 @@ class Body extends StatelessWidget {
               children: [
                 SizedBox(height: SizeConfig.screenHeight * 0.04),
                 Text(
-                  "Change Email",
+                  "Changer l'e-mail",
                   style: headingStyle,
                 ),
                 SizedBox(height: SizeConfig.screenHeight * 0.1),

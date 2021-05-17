@@ -46,7 +46,7 @@ class _ChangePasswordFormState extends State<ChangePasswordForm> {
             buildConfirmNewPasswordFormField(),
             SizedBox(height: getProportionateScreenHeight(40)),
             DefaultButton(
-              text: "Change Password",
+              text: "Changer le mot de passe",
               press: () {
                 final updateFuture = changePasswordButtonCallback();
                 showDialog(
@@ -54,7 +54,7 @@ class _ChangePasswordFormState extends State<ChangePasswordForm> {
                   builder: (context) {
                     return FutureProgressDialog(
                       updateFuture,
-                      message: Text("Updating Password"),
+                      message: Text("Mettre à jour le mot de passe"),
                     );
                   },
                 );
@@ -71,8 +71,8 @@ class _ChangePasswordFormState extends State<ChangePasswordForm> {
       controller: confirmNewPasswordController,
       obscureText: true,
       decoration: InputDecoration(
-        hintText: "Confirm New Password",
-        labelText: "Confirm New Password",
+        hintText: "Confirmer le nouveau mot de passe",
+        labelText: "Confirmer le nouveau mot de passe",
         floatingLabelBehavior: FloatingLabelBehavior.always,
         suffixIcon: CustomSuffixIcon(
           svgIcon: "assets/icons/Lock.svg",
@@ -80,7 +80,7 @@ class _ChangePasswordFormState extends State<ChangePasswordForm> {
       ),
       validator: (value) {
         if (confirmNewPasswordController.text != newPasswordController.text) {
-          return "Not matching with Password";
+          return "Ne correspond pas au mot de passe";
         }
         return null;
       },
@@ -93,8 +93,8 @@ class _ChangePasswordFormState extends State<ChangePasswordForm> {
       controller: currentPasswordController,
       obscureText: true,
       decoration: InputDecoration(
-        hintText: "Enter Current Password",
-        labelText: "Current Password",
+        hintText: "Saisissez le mot de passe actuel",
+        labelText: "Mot de passe actuel",
         floatingLabelBehavior: FloatingLabelBehavior.always,
         suffixIcon: CustomSuffixIcon(
           svgIcon: "assets/icons/Lock.svg",
@@ -112,8 +112,8 @@ class _ChangePasswordFormState extends State<ChangePasswordForm> {
       controller: newPasswordController,
       obscureText: true,
       decoration: InputDecoration(
-        hintText: "Enter New password",
-        labelText: "New Password",
+        hintText: "Entrez un nouveau mot de passe",
+        labelText: "nouveau mot de passe",
         floatingLabelBehavior: FloatingLabelBehavior.always,
         suffixIcon: CustomSuffixIcon(
           svgIcon: "assets/icons/Lock.svg",
@@ -121,9 +121,9 @@ class _ChangePasswordFormState extends State<ChangePasswordForm> {
       ),
       validator: (value) {
         if (newPasswordController.text.isEmpty) {
-          return "Password cannot be empty";
+          return "Le mot de passe ne peut pas être vide";
         } else if (newPasswordController.text.length < 8) {
-          return "Password too short";
+          return "Mot de passe trop court";
         }
         return null;
       },
@@ -138,7 +138,7 @@ class _ChangePasswordFormState extends State<ChangePasswordForm> {
       bool currentPasswordValidation = await authService
           .verifyCurrentUserPassword(currentPasswordController.text);
       if (currentPasswordValidation == false) {
-        print("Current password provided is wrong");
+        print("Le mot de passe actuel fourni est incorrect");
       } else {
         bool updationStatus = false;
         String snackbarMessage;
@@ -146,11 +146,11 @@ class _ChangePasswordFormState extends State<ChangePasswordForm> {
           updationStatus = await authService.changePasswordForCurrentUser(
               newPassword: newPasswordController.text);
           if (updationStatus == true) {
-            snackbarMessage = "Password changed successfully";
+            snackbarMessage = "Le mot de passe a été changé avec succès";
           } else {
             throw FirebaseCredentialActionAuthUnknownReasonFailureException(
                 message:
-                    "Failed to change password, due to some unknown reason");
+                    "Échec de la modification du mot de passe, pour une raison inconnue");
           }
         } on MessagedFirebaseAuthException catch (e) {
           snackbarMessage = e.message;

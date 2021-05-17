@@ -18,7 +18,7 @@ class Body extends StatelessWidget {
               children: [
                 SizedBox(height: SizeConfig.screenHeight * 0.04),
                 Text(
-                  "Change Password",
+                  "Changer le mot de passe",
                   style: headingStyle,
                 ),
                 SizedBox(height: SizeConfig.screenHeight * 0.1),

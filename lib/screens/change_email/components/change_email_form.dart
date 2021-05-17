@@ -47,7 +47,7 @@ class _ChangeEmailFormState extends State<ChangeEmailForm> {
             buildPasswordFormField(),
             SizedBox(height: getProportionateScreenHeight(40)),
             DefaultButton(
-              text: "Change Email",
+              text: "Changer l'e-mail",
               press: () {
                 final updateFuture = changeEmailButtonCallback();
                 showDialog(
@@ -55,7 +55,7 @@ class _ChangeEmailFormState extends State<ChangeEmailForm> {
                   builder: (context) {
                     return FutureProgressDialog(
                       updateFuture,
-                      message: Text("Updating Email"),
+                      message: Text("Mise à jour de l'e-mail"),
                     );
                   },
                 );
@@ -74,8 +74,8 @@ class _ChangeEmailFormState extends State<ChangeEmailForm> {
       controller: passwordController,
       obscureText: true,
       decoration: InputDecoration(
-        hintText: "Password",
-        labelText: "Enter Password",
+        hintText: "Mot de passe",
+        labelText: "Entrer le mot de passe",
         floatingLabelBehavior: FloatingLabelBehavior.always,
         suffixIcon: CustomSuffixIcon(
           svgIcon: "assets/icons/Lock.svg",
@@ -83,7 +83,7 @@ class _ChangeEmailFormState extends State<ChangeEmailForm> {
       ),
       validator: (value) {
         if (passwordController.text.isEmpty) {
-          return "Password cannot be empty";
+          return "Le mot de passe ne peut pas être vide";
         }
         return null;
       },
@@ -101,8 +101,8 @@ class _ChangeEmailFormState extends State<ChangeEmailForm> {
         final textField = TextFormField(
           controller: currentEmailController,
           decoration: InputDecoration(
-            hintText: "CurrentEmail",
-            labelText: "Current Email",
+            hintText: "Email actuel",
+            labelText: "Email actuel",
             floatingLabelBehavior: FloatingLabelBehavior.always,
             suffixIcon: CustomSuffixIcon(
               svgIcon: "assets/icons/Mail.svg",
@@ -120,8 +120,8 @@ class _ChangeEmailFormState extends State<ChangeEmailForm> {
     return TextFormField(
       controller: newEmailController,
       decoration: InputDecoration(
-        hintText: "Enter New Email",
-        labelText: "New Email",
+        hintText: "Entrez un nouveau Email",
+        labelText: "nouveau Email",
         floatingLabelBehavior: FloatingLabelBehavior.always,
         suffixIcon: CustomSuffixIcon(
           svgIcon: "assets/icons/Mail.svg",
@@ -133,7 +133,7 @@ class _ChangeEmailFormState extends State<ChangeEmailForm> {
         } else if (!emailValidatorRegExp.hasMatch(newEmailController.text)) {
           return kInvalidEmailError;
         } else if (newEmailController.text == currentEmailController.text) {
-          return "Email is already linked to account";
+          return "L'e-mail est déjà lié au compte";
         }
         return null;
       },
@@ -155,11 +155,11 @@ class _ChangeEmailFormState extends State<ChangeEmailForm> {
               newEmail: newEmailController.text);
           if (updationStatus == true) {
             snackbarMessage =
-                "Verification email sent. Please verify your new email";
+                "L'email de vérification a été envoyé. Veuillez vérifier votre nouvelle adresse e-mail";
           } else {
             throw FirebaseCredentialActionAuthUnknownReasonFailureException(
                 message:
-                    "Couldn't process your request now. Please try again later");
+                    "Impossible de traiter votre demande maintenant. Veuillez réessayer plus tard");
           }
         } on MessagedFirebaseAuthException catch (e) {
           snackbarMessage = e.message;

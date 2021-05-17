@@ -17,7 +17,7 @@ class Body extends StatelessWidget {
             children: [
               SizedBox(height: SizeConfig.screenHeight * 0.04),
               Text(
-                "Change Phone Number",
+                "Changer de numéro",
                 style: headingStyle,
               ),
               ChangePhoneNumberForm(),

@@ -117,7 +117,7 @@ class Body extends StatelessWidget {
 
   Widget buildChosePictureButton(BuildContext context, ChosenImage bodyState) {
     return DefaultButton(
-      text: "Choose Picture",
+      text: "Choisissez une image",
       press: () {
         getImageFromUser(context, bodyState);
       },
@@ -126,7 +126,7 @@ class Body extends StatelessWidget {
 
   Widget buildUploadPictureButton(BuildContext context, ChosenImage bodyState) {
     return DefaultButton(
-      text: "Upload Picture",
+      text: "Charger une photo",
       press: () {
         final Future uploadFuture =
             uploadImageToFirestorage(context, bodyState);
@@ -135,12 +135,12 @@ class Body extends StatelessWidget {
           builder: (context) {
             return FutureProgressDialog(
               uploadFuture,
-              message: Text("Updating Display Picture"),
+              message: Text("Mise à jour de l'image"),
             );
           },
         );
         ScaffoldMessenger.of(context)
-            .showSnackBar(SnackBar(content: Text("Display Picture updated")));
+            .showSnackBar(SnackBar(content: Text("Afficher l'image mise à jour")));
       },
     );
   }
@@ -157,16 +157,16 @@ class Body extends StatelessWidget {
       uploadDisplayPictureStatus = await UserDatabaseHelper()
           .uploadDisplayPictureForCurrentUser(downloadUrl);
       if (uploadDisplayPictureStatus == true) {
-        snackbarMessage = "Display Picture updated successfully";
+        snackbarMessage = "Afficher l'image mise à jour avec succès";
       } else {
-        throw "Coulnd't update display picture due to unknown reason";
+        throw "Ne met pas à jour l'image d'affichage pour une raison inconnue";
       }
     } on FirebaseException catch (e) {
       Logger().w("Firebase Exception: $e");
-      snackbarMessage = "Something went wrong";
+      snackbarMessage = "Un problème est survenu";
     } catch (e) {
       Logger().w("Unknown Exception: $e");
-      snackbarMessage = "Something went wrong";
+      snackbarMessage = "Un problème est survenu";
     } finally {
       Logger().i(snackbarMessage);
       ScaffoldMessenger.of(context).showSnackBar(
@@ -179,7 +179,7 @@ class Body extends StatelessWidget {
 
   Widget buildRemovePictureButton(BuildContext context, ChosenImage bodyState) {
     return DefaultButton(
-      text: "Remove Picture",
+      text: "Supprimer l'image",
       press: () async {
         final Future uploadFuture =
             removeImageFromFirestore(context, bodyState);
@@ -188,12 +188,12 @@ class Body extends StatelessWidget {
           builder: (context) {
             return FutureProgressDialog(
               uploadFuture,
-              message: Text("Deleting Display Picture"),
+              message: Text("Suppression de l'image affichée"),
             );
           },
         );
         ScaffoldMessenger.of(context)
-            .showSnackBar(SnackBar(content: Text("Display Picture removed")));
+            .showSnackBar(SnackBar(content: Text("Afficher l'image supprimée")));
         Navigator.pop(context);
       },
     );
@@ -209,20 +209,20 @@ class Body extends StatelessWidget {
           .deleteFileFromPath(
               UserDatabaseHelper().getPathForCurrentUserDisplayPicture());
       if (fileDeletedFromFirestore == false) {
-        throw "Couldn't delete file from Storage, please retry";
+        throw "Impossible de supprimer le fichier du stockage, veuillez réessayer";
       }
       status = await UserDatabaseHelper().removeDisplayPictureForCurrentUser();
       if (status == true) {
-        snackbarMessage = "Picture removed successfully";
+        snackbarMessage = "Photo supprimée avec succès";
       } else {
-        throw "Coulnd't removed due to unknown reason";
+        throw "Impossible de supprimer pour une raison inconnue";
       }
     } on FirebaseException catch (e) {
       Logger().w("Firebase Exception: $e");
-      snackbarMessage = "Something went wrong";
+      snackbarMessage = "Un problème est survenu";
     } catch (e) {
       Logger().w("Unknown Exception: $e");
-      snackbarMessage = "Something went wrong";
+      snackbarMessage = "Un problème est survenu";
     } finally {
       Logger().i(snackbarMessage);
       ScaffoldMessenger.of(context).showSnackBar(
