@@ -18,11 +18,11 @@ class Body extends StatelessWidget {
               children: [
                 SizedBox(height: SizeConfig.screenHeight * 0.04),
                 Text(
-                  "Forgot Password",
+                  "Mot de passe oublié",
                   style: headingStyle,
                 ),
                 Text(
-                  "Please enter your email and we will send \nyou a link to return to your account",
+                  "Veuillez entrer votre email et nous vous enverrons un lien pour revenir à votre compte",
                   textAlign: TextAlign.center,
                 ),
                 SizedBox(height: SizeConfig.screenHeight * 0.1),

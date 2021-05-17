@@ -36,7 +36,7 @@ class _ForgotPasswordFormState extends State<ForgotPasswordForm> {
           SizedBox(height: getProportionateScreenHeight(30)),
           SizedBox(height: SizeConfig.screenHeight * 0.1),
           DefaultButton(
-            text: "Send verification email",
+            text: "Entrer votre Email",
             press: sendVerificationEmailButtonCallback,
           ),
           SizedBox(height: SizeConfig.screenHeight * 0.1),
@@ -52,8 +52,8 @@ class _ForgotPasswordFormState extends State<ForgotPasswordForm> {
       controller: emailFieldController,
       keyboardType: TextInputType.emailAddress,
       decoration: InputDecoration(
-        hintText: "Enter your email",
-        labelText: "Email",
+        hintText: "Entrer votre Email",
+        labelText: "E-mail",
         floatingLabelBehavior: FloatingLabelBehavior.always,
         suffixIcon: CustomSuffixIcon(
           svgIcon: "assets/icons/Mail.svg",
@@ -86,16 +86,16 @@ class _ForgotPasswordFormState extends State<ForgotPasswordForm> {
           builder: (context) {
             return FutureProgressDialog(
               resultFuture,
-              message: Text("Sending verification email"),
+              message: Text("Envoi d'un e-mail de vérification"),
             );
           },
         );
         if (resultStatus == true) {
-          snackbarMessage = "Password Reset Link sent to your email";
+          snackbarMessage = "Lien de réinitialisation du mot de passe envoyé à votre adresse e-mail";
         } else {
           throw FirebaseCredentialActionAuthUnknownReasonFailureException(
               message:
-                  "Sorry, could not process your request now, try again later");
+                  "Désolé, impossible de traiter votre demande maintenant, réessayez plus tard");
         }
       } on MessagedFirebaseAuthException catch (e) {
         snackbarMessage = e.message;
