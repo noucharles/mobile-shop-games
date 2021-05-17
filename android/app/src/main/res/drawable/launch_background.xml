@@ -5,6 +5,6 @@
 
     <!-- You can insert your own image assets here -->
     <item>
-        <bitmap android:gravity="center" android:src="@drawable/launcher_icon" />
-    </item>
+        <bitmap android:gravity="center" android:src="@mipmap/ic_launcher" />
+    </item>u
 </layer-list>
