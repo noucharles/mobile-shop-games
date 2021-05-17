@@ -50,7 +50,7 @@ class _ChangePhoneNumberFormState extends State<ChangePhoneNumberForm> {
                 builder: (context) {
                   return FutureProgressDialog(
                     updateFuture,
-                    message: Text("Mettre à jour le numéro de téléphone"),
+                    message: Text("Mettre à jour le numéro"),
                   );
                 },
               );

@@ -65,19 +65,19 @@ class AddressBox extends StatelessWidget {
                             ),
                           ),
                           Text(
-                            "City: ${address.city}",
+                            "Ville: ${address.city}",
                             style: TextStyle(
                               fontSize: 16,
                             ),
                           ),
                           Text(
-                            "District: ${address.district}",
+                            "Quartier: ${address.district}",
                             style: TextStyle(
                               fontSize: 16,
                             ),
                           ),
                           Text(
-                            "State: ${address.state}",
+                            "État: ${address.state}",
                             style: TextStyle(
                               fontSize: 16,
                             ),
@@ -95,7 +95,7 @@ class AddressBox extends StatelessWidget {
                             ),
                           ),
                           Text(
-                            "Phone: ${address.phone}",
+                            "Téléphoner: ${address.phone}",
                             style: TextStyle(
                               fontSize: 16,
                             ),

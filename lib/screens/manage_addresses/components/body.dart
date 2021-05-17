@@ -47,16 +47,16 @@ class _BodyState extends State<Body> {
                 children: [
                   SizedBox(height: getProportionateScreenHeight(10)),
                   Text(
-                    "Manage Addresses",
+                    "Gérer les adresses",
                     style: headingStyle,
                   ),
                   Text(
-                    "Swipe LEFT to Edit, Swipe RIGHT to Delete",
+                    "Balayez vers la GAUCHE pour modifier, glissez vers la DROITE pour supprimer",
                     style: TextStyle(fontSize: 12),
                   ),
                   SizedBox(height: getProportionateScreenHeight(20)),
                   DefaultButton(
-                    text: "Add New Address",
+                    text: "Ajouter une nouvelle adresse",
                     press: () async {
                       Navigator.push(
                         context,
@@ -78,7 +78,7 @@ class _BodyState extends State<Body> {
                             return Center(
                               child: NothingToShowContainer(
                                 iconPath: "assets/icons/add_location.svg",
-                                secondaryMessage: "Add your first Address",
+                                secondaryMessage: "Ajoutez votre première adresse",
                               ),
                             );
                           }
@@ -100,8 +100,8 @@ class _BodyState extends State<Body> {
                         return Center(
                           child: NothingToShowContainer(
                             iconPath: "assets/icons/network_error.svg",
-                            primaryMessage: "Something went wrong",
-                            secondaryMessage: "Unable to connect to Database",
+                            primaryMessage: "Un problème est survenu",
+                            secondaryMessage: "Impossible de se connecter à la base de données",
                           ),
                         );
                       },
@@ -129,16 +129,16 @@ class _BodyState extends State<Body> {
       builder: (context) {
         return AlertDialog(
           title: Text("Confirmation"),
-          content: Text("Are you sure you want to delete this Address ?"),
+          content: Text("Êtes-vous sûr de vouloir supprimer cette adresse?"),
           actions: [
             FlatButton(
-              child: Text("Yes"),
+              child: Text("Oui"),
               onPressed: () {
                 Navigator.pop(context, true);
               },
             ),
             FlatButton(
-              child: Text("No"),
+              child: Text("Non"),
               onPressed: () {
                 Navigator.pop(context, false);
               },
@@ -155,13 +155,13 @@ class _BodyState extends State<Body> {
         status =
             await UserDatabaseHelper().deleteAddressForCurrentUser(addressId);
         if (status == true) {
-          snackbarMessage = "Address deleted successfully";
+          snackbarMessage = "Adresse supprimée avec succès";
         } else {
-          throw "Coulnd't delete address due to unknown reason";
+          throw "Impossible de supprimer l'adresse pour une raison inconnue";
         }
       } on FirebaseException catch (e) {
         Logger().w("Firebase Exception: $e");
-        snackbarMessage = "Something went wrong";
+        snackbarMessage = "Un problème est survenu";
       } catch (e) {
         Logger().w("Unknown Exception: $e");
         snackbarMessage = e.toString();
@@ -284,7 +284,7 @@ class _BodyState extends State<Body> {
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
           Text(
-            "Delete",
+            "Supprimer",
             style: TextStyle(
               color: Colors.white,
               fontWeight: FontWeight.bold,
