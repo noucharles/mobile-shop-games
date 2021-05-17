@@ -23,7 +23,7 @@ class Body extends StatelessWidget {
               children: [
                 SizedBox(height: getProportionateScreenHeight(10)),
                 Text(
-                  "Fill Product Details",
+                  "Remplissez les détails du produit",
                   style: headingStyle,
                 ),
                 SizedBox(height: getProportionateScreenHeight(30)),

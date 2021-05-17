@@ -24,7 +24,7 @@ class Body extends StatelessWidget {
               children: [
                 SizedBox(height: getProportionateScreenHeight(20)),
                 Text(
-                  "Fill Address Details",
+                  "Remplir les détails de l'adresse ",
                   style: headingStyle,
                 ),
                 SizedBox(height: getProportionateScreenHeight(30)),

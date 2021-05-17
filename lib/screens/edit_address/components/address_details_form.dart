@@ -87,7 +87,7 @@ class _AddressDetailsFormState extends State<AddressDetailsForm> {
           buildPhoneField(),
           SizedBox(height: getProportionateScreenHeight(30)),
           DefaultButton(
-            text: "Save Address",
+            text: "Enregistrer l'adresse",
             press: widget.addressToEdit == null
                 ? saveNewAddressButtonCallback
                 : saveEditedAddressButtonCallback,
@@ -116,8 +116,8 @@ class _AddressDetailsFormState extends State<AddressDetailsForm> {
       keyboardType: TextInputType.name,
       maxLength: 8,
       decoration: InputDecoration(
-        hintText: "Enter a title for address",
-        labelText: "Title",
+        hintText: "Entrez un titre pour l'adresse",
+        labelText: "Titre",
         floatingLabelBehavior: FloatingLabelBehavior.always,
       ),
       validator: (value) {
@@ -135,8 +135,8 @@ class _AddressDetailsFormState extends State<AddressDetailsForm> {
       controller: receiverFieldController,
       keyboardType: TextInputType.name,
       decoration: InputDecoration(
-        hintText: "Enter Full Name of Receiver",
-        labelText: "Receiver Name",
+        hintText: "Entrez le nom complet du destinataire",
+        labelText: "Nom du destinataire",
         floatingLabelBehavior: FloatingLabelBehavior.always,
       ),
       validator: (value) {
@@ -154,8 +154,8 @@ class _AddressDetailsFormState extends State<AddressDetailsForm> {
       controller: addressLine1FieldController,
       keyboardType: TextInputType.streetAddress,
       decoration: InputDecoration(
-        hintText: "Enter Address Line No. 1",
-        labelText: "Address Line 1",
+        hintText: "Entrez Ligne d'adresse n° 1",
+        labelText: "Adresse Ligne 1",
         floatingLabelBehavior: FloatingLabelBehavior.always,
       ),
       validator: (value) {
@@ -173,8 +173,8 @@ class _AddressDetailsFormState extends State<AddressDetailsForm> {
       controller: addressLine2FieldController,
       keyboardType: TextInputType.streetAddress,
       decoration: InputDecoration(
-        hintText: "Enter Address Line No. 2",
-        labelText: "Address Line 2",
+        hintText: "Entrez Ligne d'adresse n° 2",
+        labelText: "Adresse Ligne 2",
         floatingLabelBehavior: FloatingLabelBehavior.always,
       ),
       validator: (value) {
@@ -192,8 +192,8 @@ class _AddressDetailsFormState extends State<AddressDetailsForm> {
       controller: cityFieldController,
       keyboardType: TextInputType.name,
       decoration: InputDecoration(
-        hintText: "Enter City",
-        labelText: "City",
+        hintText: "Entrez Ville",
+        labelText: "Ville",
         floatingLabelBehavior: FloatingLabelBehavior.always,
       ),
       validator: (value) {
@@ -211,8 +211,8 @@ class _AddressDetailsFormState extends State<AddressDetailsForm> {
       controller: districtFieldController,
       keyboardType: TextInputType.name,
       decoration: InputDecoration(
-        hintText: "Enter District",
-        labelText: "District",
+        hintText: "Entrez Quartier",
+        labelText: "Quartier",
         floatingLabelBehavior: FloatingLabelBehavior.always,
       ),
       validator: (value) {
@@ -230,8 +230,8 @@ class _AddressDetailsFormState extends State<AddressDetailsForm> {
       controller: stateFieldController,
       keyboardType: TextInputType.name,
       decoration: InputDecoration(
-        hintText: "Enter State",
-        labelText: "State",
+        hintText: "Entrez l'état",
+        labelText: "État",
         floatingLabelBehavior: FloatingLabelBehavior.always,
       ),
       validator: (value) {
@@ -249,17 +249,17 @@ class _AddressDetailsFormState extends State<AddressDetailsForm> {
       controller: pincodeFieldController,
       keyboardType: TextInputType.number,
       decoration: InputDecoration(
-        hintText: "Enter PINCODE",
-        labelText: "PINCODE",
+        hintText: "Entrez le CODE PIN",
+        labelText: "CODE PIN",
         floatingLabelBehavior: FloatingLabelBehavior.always,
       ),
       validator: (value) {
         if (pincodeFieldController.text.isEmpty) {
           return FIELD_REQUIRED_MSG;
         } else if (!isNumeric(pincodeFieldController.text)) {
-          return "Only digits field";
+          return "Champ de chiffres uniquement";
         } else if (pincodeFieldController.text.length != 6) {
-          return "PINCODE must be of 6 Digits only";
+          return "Le CODE PIN doit être composé de 6 chiffres uniquement ";
         }
         return null;
       },
@@ -272,8 +272,8 @@ class _AddressDetailsFormState extends State<AddressDetailsForm> {
       controller: landmarkFieldController,
       keyboardType: TextInputType.name,
       decoration: InputDecoration(
-        hintText: "Enter Landmark",
-        labelText: "Landmark",
+        hintText: "Entrez un point de repère",
+        labelText: "Point de repère",
         floatingLabelBehavior: FloatingLabelBehavior.always,
       ),
       validator: (value) {
@@ -291,15 +291,15 @@ class _AddressDetailsFormState extends State<AddressDetailsForm> {
       controller: phoneFieldController,
       keyboardType: TextInputType.phone,
       decoration: InputDecoration(
-        hintText: "Enter Phone Number",
-        labelText: "Phone Number",
+        hintText: "Entrez le numéro de téléphone",
+        labelText: "Numéro de téléphone",
         floatingLabelBehavior: FloatingLabelBehavior.always,
       ),
       validator: (value) {
         if (phoneFieldController.text.isEmpty) {
           return FIELD_REQUIRED_MSG;
         } else if (phoneFieldController.text.length != 10) {
-          return "Only 10 Digits";
+          return "Seulement 10 chiffres";
         }
         return null;
       },
@@ -317,16 +317,16 @@ class _AddressDetailsFormState extends State<AddressDetailsForm> {
         status =
             await UserDatabaseHelper().addAddressForCurrentUser(newAddress);
         if (status == true) {
-          snackbarMessage = "Address saved successfully";
+          snackbarMessage = "Adresse enregistrée avec succès";
         } else {
-          throw "Coundn't save the address due to unknown reason";
+          throw "Je n'ai pas enregistré l'adresse pour une raison inconnue";
         }
       } on FirebaseException catch (e) {
         Logger().w("Firebase Exception: $e");
-        snackbarMessage = "Something went wrong";
+        snackbarMessage = "Un problème est survenu";
       } catch (e) {
         Logger().w("Unknown Exception: $e");
-        snackbarMessage = "Something went wrong";
+        snackbarMessage = "Un problème est survenu";
       } finally {
         Logger().i(snackbarMessage);
         ScaffoldMessenger.of(context).showSnackBar(
@@ -350,16 +350,16 @@ class _AddressDetailsFormState extends State<AddressDetailsForm> {
         status =
             await UserDatabaseHelper().updateAddressForCurrentUser(newAddress);
         if (status == true) {
-          snackbarMessage = "Address updated successfully";
+          snackbarMessage = "Adresse mise à jour avec succès";
         } else {
-          throw "Couldn't update address due to unknown reason";
+          throw "Impossible de mettre à jour l'adresse pour une raison inconnue";
         }
       } on FirebaseException catch (e) {
         Logger().w("Firebase Exception: $e");
-        snackbarMessage = "Something went wrong";
+        snackbarMessage = "Un problème est survenu";
       } catch (e) {
         Logger().w("Unknown Exception: $e");
-        snackbarMessage = "Something went wrong";
+        snackbarMessage = "Un problème est survenu";
       } finally {
         Logger().i(snackbarMessage);
         ScaffoldMessenger.of(context).showSnackBar(

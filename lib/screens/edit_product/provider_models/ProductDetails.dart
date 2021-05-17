@@ -12,7 +12,7 @@ class CustomImage {
   CustomImage({this.imgType = ImageType.local, @required this.path});
   @override
   String toString() {
-    return "Instance of Custom Image: {imgType: $imgType, path: $path}";
+    return "Instance d'image personnalisée : {imgType: $imgType, path: $path}";
   }
 }
 
