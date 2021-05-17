@@ -29,15 +29,15 @@ const defaultDuration = Duration(milliseconds: 250);
 // Form Error
 final RegExp emailValidatorRegExp =
     RegExp(r"^[a-zA-Z0-9.]+@[a-zA-Z0-9]+\.[a-zA-Z]+");
-const String kEmailNullError = "Please Enter your email";
-const String kInvalidEmailError = "Please Enter Valid Email";
-const String kPassNullError = "Please Enter your password";
-const String kShortPassError = "Password is too short";
-const String kMatchPassError = "Passwords don't match";
-const String kNamelNullError = "Please Enter your name";
-const String kPhoneNumberNullError = "Please Enter your phone number";
-const String kAddressNullError = "Please Enter your address";
-const String FIELD_REQUIRED_MSG = "This field is required";
+const String kEmailNullError = "Veuillez entrer votre email";
+const String kInvalidEmailError = "Veuillez saisir un e-mail valide";
+const String kPassNullError = "Entrez votre mot de passe";
+const String kShortPassError = "Le mot de passe est trop court";
+const String kMatchPassError = "Les mots de passe ne correspondent pas";
+const String kNamelNullError = "S'il vous plaît entrez votre nom";
+const String kPhoneNumberNullError = "Veuillez entrer votre numéro de téléphone";
+const String kAddressNullError = "Veuillez entrer votre adresse";
+const String FIELD_REQUIRED_MSG = "Ce champ est requis";
 
 final otpInputDecoration = InputDecoration(
   contentPadding:
