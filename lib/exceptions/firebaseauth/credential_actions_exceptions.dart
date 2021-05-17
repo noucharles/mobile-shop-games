@@ -10,27 +10,27 @@ class FirebaseCredentialActionAuthException
 class FirebaseCredentialActionAuthUserNotFoundException
     extends FirebaseCredentialActionAuthException {
   FirebaseCredentialActionAuthUserNotFoundException(
-      {String message = "No such user exist"})
+      {String message = "Aucun utilisateur de ce type n'existe"})
       : super(message: message);
 }
 
 class FirebaseCredentialActionAuthWeakPasswordException
     extends FirebaseCredentialActionAuthException {
   FirebaseCredentialActionAuthWeakPasswordException(
-      {String message = "Password is weak, try something better"})
+      {String message = "Le mot de passe est faible, essayez quelque chose de mieux"})
       : super(message: message);
 }
 
 class FirebaseCredentialActionAuthRequiresRecentLoginException
     extends FirebaseCredentialActionAuthException {
   FirebaseCredentialActionAuthRequiresRecentLoginException(
-      {String message = "This action requires re-Login"})
+      {String message = "Cette action nécessite une reconnexion"})
       : super(message: message);
 }
 
 class FirebaseCredentialActionAuthUnknownReasonFailureException
     extends FirebaseCredentialActionAuthException {
   FirebaseCredentialActionAuthUnknownReasonFailureException(
-      {String message = "The action can't be performed due to unknown reason"})
+      {String message = "L'action ne peut pas être effectuée pour une raison inconnue"})
       : super(message: message);
 }

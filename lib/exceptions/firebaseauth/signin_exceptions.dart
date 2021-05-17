@@ -9,40 +9,40 @@ class FirebaseSignInAuthException extends MessagedFirebaseAuthException {
 class FirebaseSignInAuthUserDisabledException
     extends FirebaseSignInAuthException {
   FirebaseSignInAuthUserDisabledException(
-      {String message = "This user is disabled"})
+      {String message = "Cet utilisateur est désactivé"})
       : super(message: message);
 }
 
 class FirebaseSignInAuthUserNotFoundException
     extends FirebaseSignInAuthException {
   FirebaseSignInAuthUserNotFoundException(
-      {String message = "No such user found"})
+      {String message = "Aucun utilisateur de ce type trouvé"})
       : super(message: message);
 }
 
 class FirebaseSignInAuthInvalidEmailException
     extends FirebaseSignInAuthException {
   FirebaseSignInAuthInvalidEmailException(
-      {String message = "Email is not valid"})
+      {String message = "L'email n'est pas valide"})
       : super(message: message);
 }
 
 class FirebaseSignInAuthWrongPasswordException
     extends FirebaseSignInAuthException {
-  FirebaseSignInAuthWrongPasswordException({String message = "Wrong password"})
+  FirebaseSignInAuthWrongPasswordException({String message = "Mauvais mot de passe"})
       : super(message: message);
 }
 
 class FirebaseSignInAuthUserNotVerifiedException
     extends FirebaseSignInAuthException {
   FirebaseSignInAuthUserNotVerifiedException(
-      {String message = "This user is not verified"})
+      {String message = "Cet utilisateur n'est pas vérifié"})
       : super(message: message);
 }
 
 class FirebaseSignInAuthUnknownReasonFailure
     extends FirebaseSignInAuthException {
   FirebaseSignInAuthUnknownReasonFailure(
-      {String message = "Sign in failed due to unknown reason"})
+      {String message = "La connexion a échoué pour une raison inconnue"})
       : super(message: message);
 }

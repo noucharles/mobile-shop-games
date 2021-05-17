@@ -11,6 +11,6 @@ abstract class LocalFileHandlingException {
 class LocalFileHandlingStorageReadPermissionDeniedException
     extends LocalFileHandlingException {
   LocalFileHandlingStorageReadPermissionDeniedException(
-      {String message = "Storage Read permissions not granted"})
+      {String message = "Autorisations de lecture de stockage non accordées"})
       : super(message);
 }

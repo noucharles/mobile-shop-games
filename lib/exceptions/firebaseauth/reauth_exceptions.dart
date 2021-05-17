@@ -8,48 +8,48 @@ class FirebaseReauthException extends MessagedFirebaseAuthException {
 
 class FirebaseReauthUserMismatchException extends FirebaseReauthException {
   FirebaseReauthUserMismatchException(
-      {String message: "User not matching with current user"})
+      {String message: "L'utilisateur ne correspond pas à l'utilisateur actuel"})
       : super(message: message);
 }
 
 class FirebaseReauthUserNotFoundException extends FirebaseReauthException {
-  FirebaseReauthUserNotFoundException({String message = "No such user exists"})
+  FirebaseReauthUserNotFoundException({String message = "Aucun utilisateur de ce type n'existe"})
       : super(message: message);
 }
 
 class FirebaseReauthInvalidCredentialException extends FirebaseReauthException {
   FirebaseReauthInvalidCredentialException(
-      {String message = "Invalid Credentials"})
+      {String message = "Les informations d'identification invalides"})
       : super(message: message);
 }
 
 class FirebaseReauthInvalidEmailException extends FirebaseReauthException {
-  FirebaseReauthInvalidEmailException({String message = "Invalid Email"})
+  FirebaseReauthInvalidEmailException({String message = "Email invalide"})
       : super(message: message);
 }
 
 class FirebaseReauthWrongPasswordException extends FirebaseReauthException {
-  FirebaseReauthWrongPasswordException({String message = "Wrong password"})
+  FirebaseReauthWrongPasswordException({String message = "Mauvais mot de passe"})
       : super(message: message);
 }
 
 class FirebaseReauthInvalidVerificationCodeException
     extends FirebaseReauthException {
   FirebaseReauthInvalidVerificationCodeException(
-      {String message = "Invalid Verification Code"})
+      {String message = "Code de vérification invalide"})
       : super(message: message);
 }
 
 class FirebaseReauthInvalidVerificationIdException
     extends FirebaseReauthException {
   FirebaseReauthInvalidVerificationIdException(
-      {String message = "Invalid Verification ID"})
+      {String message = "ID de vérification non valide"})
       : super(message: message);
 }
 
 class FirebaseReauthUnknownReasonFailureException
     extends FirebaseReauthException {
   FirebaseReauthUnknownReasonFailureException(
-      {String message = "Reauthentification Failed due to unknown reason"})
+      {String message = "La réauthentification a échoué pour une raison inconnue"})
       : super(message: message);
 }

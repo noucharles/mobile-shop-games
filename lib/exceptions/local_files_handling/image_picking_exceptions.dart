@@ -9,27 +9,27 @@ class LocalImagePickingException extends LocalFileHandlingException {
 class LocalImagePickingInvalidImageException
     extends LocalImagePickingException {
   LocalImagePickingInvalidImageException(
-      {String message = "Image chosen is invalid"})
+      {String message = "L'image choisie n'est pas valide"})
       : super(message: message);
 }
 
 class LocalImagePickingFileSizeOutOfBoundsException
     extends LocalImagePickingException {
   LocalImagePickingFileSizeOutOfBoundsException(
-      {String message = "Image size not in given range"})
+      {String message = "La taille de l'image n'est pas dans la plage donnée"})
       : super(message: message);
 }
 
 class LocalImagePickingInvalidImageSourceException
     extends LocalImagePickingException {
   LocalImagePickingInvalidImageSourceException(
-      {String message = "Image source is invalid"})
+      {String message = "La source de l'image n'est pas valide"})
       : super(message: message);
 }
 
 class LocalImagePickingUnknownReasonFailureException
     extends LocalImagePickingException {
   LocalImagePickingUnknownReasonFailureException(
-      {String message = "Failed due to unknown reason"})
+      {String message = "Échec pour une raison inconnue"})
       : super(message: message);
 }
