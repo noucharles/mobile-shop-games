@@ -264,9 +264,9 @@ class _BodyState extends State<Body> {
       case ProductType.Art:
         return "assets/images/Asport.jpg";
       case ProductType.Others:
-        return "assets/images/Afamlial.jpg";
+        return "assets/images/Afamilial.jpg";
       default:
-        return "assets/images/Afamlial.jpg";
+        return "assets/images/Afamilial.jpg";
     }
   }
 }
