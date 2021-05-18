@@ -66,7 +66,7 @@ class AddToCartFAB extends StatelessWidget {
         }
       },
       label: Text(
-        "Add to Cart",
+        "Ajouter au panier",
         style: TextStyle(
           fontWeight: FontWeight.bold,
           fontSize: 16,

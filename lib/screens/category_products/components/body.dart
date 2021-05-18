@@ -254,19 +254,19 @@ class _BodyState extends State<Body> {
   String bannerFromProductType() {
     switch (widget.productType) {
       case ProductType.Electronics:
-        return "assets/images/electronics_banner.jpg";
+        return "assets/images/Aconsoles.jpg";
       case ProductType.Books:
-        return "assets/images/books_banner.jpg";
+        return "assets/images/Aaccessoires.jpg";
       case ProductType.Fashion:
-        return "assets/images/fashions_banner.jpg";
+        return "assets/images/Aaventure.jpg";
       case ProductType.Groceries:
-        return "assets/images/groceries_banner.jpg";
+        return "assets/images/Acombat.jpg";
       case ProductType.Art:
-        return "assets/images/arts_banner.jpg";
+        return "assets/images/Asport.jpg";
       case ProductType.Others:
-        return "assets/images/others_banner.jpg";
+        return "assets/images/Afamlial.jpg";
       default:
-        return "assets/images/others_banner.jpg";
+        return "assets/images/Afamlial.jpg";
     }
   }
 }

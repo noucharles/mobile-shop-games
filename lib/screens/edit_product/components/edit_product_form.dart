@@ -458,7 +458,7 @@ class _EditProductFormState extends State<EditProductForm> {
       keyboardType: TextInputType.number,
       decoration: InputDecoration(
         hintText: "e.g., 5999.0",
-        labelText: "Prix d'origine (in INR)",
+        labelText: "Prix d'origine (en FCFA)",
         floatingLabelBehavior: FloatingLabelBehavior.always,
       ),
       validator: (_) {
@@ -477,7 +477,7 @@ class _EditProductFormState extends State<EditProductForm> {
       keyboardType: TextInputType.number,
       decoration: InputDecoration(
         hintText: "e.g., 2499.0",
-        labelText: "Prix bas (in INR)",
+        labelText: "Prix réduit (en FCFA)",
         floatingLabelBehavior: FloatingLabelBehavior.always,
       ),
       validator: (_) {

@@ -118,7 +118,19 @@ class HomeScreenDrawer extends StatelessWidget {
               );
             },
           ),
-          buildSellerExpansionTile(context),
+          StreamBuilder<User>(
+              stream: AuthentificationService().userChanges,
+              builder: (context, snapshot) {
+                if (snapshot.hasData) {
+                  final user = snapshot.data;
+                  return user.email == "noucharles@gmail.com" ||
+                          user.email == "emrickfranck@gmail.com"
+                      ? buildSellerExpansionTile(context)
+                      : Container();
+                } else {
+                  return Container();
+                }
+              }),
           ListTile(
             leading: Icon(Icons.info),
             title: Text(
@@ -141,8 +153,8 @@ class HomeScreenDrawer extends StatelessWidget {
               style: TextStyle(fontSize: 16, color: Colors.black),
             ),
             onTap: () async {
-              final confirmation =
-                  await showConfirmationDialog(context, "Confirmer la déconnexion ?");
+              final confirmation = await showConfirmationDialog(
+                  context, "Confirmer la déconnexion ?");
               if (confirmation) AuthentificationService().signOut();
             },
           ),

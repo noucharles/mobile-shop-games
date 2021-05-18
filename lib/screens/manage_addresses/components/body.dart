@@ -129,7 +129,7 @@ class _BodyState extends State<Body> {
       builder: (context) {
         return AlertDialog(
           title: Text("Confirmation"),
-          content: Text("Êtes-vous sûr de vouloir supprimer cette adresse?"),
+          content: Text("Êtes-vous sûr de vouloir supprimer cette adresse ?"),
           actions: [
             FlatButton(
               child: Text("Oui"),

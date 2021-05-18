@@ -48,7 +48,7 @@ class ProductDescription extends StatelessWidget {
                     flex: 4,
                     child: Text.rich(
                       TextSpan(
-                        text: "\₹${product.discountPrice}   ",
+                        text: "\n${product.discountPrice} FCFA  ",
                         style: TextStyle(
                           color: kPrimaryColor,
                           fontWeight: FontWeight.w900,
@@ -56,7 +56,7 @@ class ProductDescription extends StatelessWidget {
                         ),
                         children: [
                           TextSpan(
-                            text: "\n\₹${product.originalPrice}",
+                            text: "\n${product.originalPrice} FCFA",
                             style: TextStyle(
                               decoration: TextDecoration.lineThrough,
                               color: kTextColor,
