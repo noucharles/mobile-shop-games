@@ -358,7 +358,7 @@ class _EditProductFormState extends State<EditProductForm> {
       controller: titleFieldController,
       keyboardType: TextInputType.name,
       decoration: InputDecoration(
-        hintText: "e.g., Samsung Galaxy F41 Mobile",
+        hintText: "ex: PS4",
         labelText: "Titre du produit",
         floatingLabelBehavior: FloatingLabelBehavior.always,
       ),
@@ -377,7 +377,7 @@ class _EditProductFormState extends State<EditProductForm> {
       controller: variantFieldController,
       keyboardType: TextInputType.name,
       decoration: InputDecoration(
-        hintText: "e.g., Fusion Green",
+        hintText: "ex: Slim",
         labelText: "Une variante",
         floatingLabelBehavior: FloatingLabelBehavior.always,
       ),
@@ -397,7 +397,7 @@ class _EditProductFormState extends State<EditProductForm> {
       keyboardType: TextInputType.multiline,
       decoration: InputDecoration(
         hintText:
-            "e.g., RAM: 4GB | Front Camera: 30MP | Rear Camera: Quad Camera Setup",
+            "ex: RAM: 8GB | Support: Blu-Ray | Poids: 2.1 grammes",
         labelText: "Points forts",
         floatingLabelBehavior: FloatingLabelBehavior.always,
       ),
@@ -418,7 +418,7 @@ class _EditProductFormState extends State<EditProductForm> {
       keyboardType: TextInputType.multiline,
       decoration: InputDecoration(
         hintText:
-            "e.g., This a flagship phone under made in India, by Samsung. With this device, Samsung introduces its new F Series.",
+            "ex: C'est la version améliorée de la console la plus populaire de la huitième génération.Elle conserve la même puissance et conserve son avantage devant la Xbox One et la Switch.",
         labelText: "Description",
         floatingLabelBehavior: FloatingLabelBehavior.always,
       ),
@@ -438,7 +438,7 @@ class _EditProductFormState extends State<EditProductForm> {
       controller: sellerFieldController,
       keyboardType: TextInputType.name,
       decoration: InputDecoration(
-        hintText: "e.g., HighTech Traders",
+        hintText: "ex: 237 Gaming",
         labelText: "Vendeur",
         floatingLabelBehavior: FloatingLabelBehavior.always,
       ),
@@ -457,7 +457,7 @@ class _EditProductFormState extends State<EditProductForm> {
       controller: originalPriceFieldController,
       keyboardType: TextInputType.number,
       decoration: InputDecoration(
-        hintText: "e.g., 5999.0",
+        hintText: "ex: 200000",
         labelText: "Prix d'origine (en FCFA)",
         floatingLabelBehavior: FloatingLabelBehavior.always,
       ),
@@ -476,7 +476,7 @@ class _EditProductFormState extends State<EditProductForm> {
       controller: discountPriceFieldController,
       keyboardType: TextInputType.number,
       decoration: InputDecoration(
-        hintText: "e.g., 2499.0",
+        hintText: "ex: 1800000",
         labelText: "Prix réduit (en FCFA)",
         floatingLabelBehavior: FloatingLabelBehavior.always,
       ),

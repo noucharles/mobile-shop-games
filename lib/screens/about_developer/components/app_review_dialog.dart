@@ -25,8 +25,8 @@ class AppReviewDialog extends StatelessWidget {
           child: TextFormField(
             initialValue: appReview.feedback,
             decoration: InputDecoration(
-              hintText: "Feedback for App",
-              labelText: "Feedback (optional)",
+              hintText: "Commentaires pour l'app",
+              labelText: "Réaction (optionnel)",
               floatingLabelBehavior: FloatingLabelBehavior.always,
             ),
             onChanged: (value) {

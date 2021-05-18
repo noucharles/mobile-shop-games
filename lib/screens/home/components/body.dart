@@ -31,32 +31,32 @@ class _BodyState extends State<Body> {
     <String, dynamic>{
       ICON_KEY: "assets/icons/console-de-jeux-video-avec-manette-de-jeu.svg",
       TITLE_KEY: "Consoles",
-      PRODUCT_TYPE_KEY: ProductType.Electronics,
+      PRODUCT_TYPE_KEY: ProductType.Console,
     },
     <String, dynamic>{
       ICON_KEY: "assets/icons/Aaccessoires.svg",
       TITLE_KEY: "Accessoires",
-      PRODUCT_TYPE_KEY: ProductType.Books,
+      PRODUCT_TYPE_KEY: ProductType.Accessoires,
     },
     <String, dynamic>{
       ICON_KEY: "assets/icons/Aaventure.svg",
       TITLE_KEY: "Aventure",
-      PRODUCT_TYPE_KEY: ProductType.Fashion,
+      PRODUCT_TYPE_KEY: ProductType.Aventure,
     },
     <String, dynamic>{
       ICON_KEY: "assets/icons/Acombat.svg",
       TITLE_KEY: "Combat",
-      PRODUCT_TYPE_KEY: ProductType.Groceries,
+      PRODUCT_TYPE_KEY: ProductType.Combat,
     },
     <String, dynamic>{
       ICON_KEY: "assets/icons/Asport.svg",
       TITLE_KEY: "Sport",
-      PRODUCT_TYPE_KEY: ProductType.Art,
+      PRODUCT_TYPE_KEY: ProductType.Sport,
     },
     <String, dynamic>{
       ICON_KEY: "assets/icons/Afamille.svg",
       TITLE_KEY: "Familliale",
-      PRODUCT_TYPE_KEY: ProductType.Others,
+      PRODUCT_TYPE_KEY: ProductType.Familiale,
     },
   ];
 

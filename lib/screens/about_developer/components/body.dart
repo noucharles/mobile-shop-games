@@ -50,7 +50,7 @@ class Body extends StatelessWidget {
                   ),
                 ),
                 Text(
-                  "PCCoE Pune",
+                  "237 Gaming",
                   style: TextStyle(
                     fontSize: 21,
                     fontWeight: FontWeight.w500,

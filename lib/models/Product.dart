@@ -2,12 +2,12 @@ import 'package:e_commerce_app_flutter/models/Model.dart';
 import 'package:enum_to_string/enum_to_string.dart';
 
 enum ProductType {
-  Electronics,
-  Books,
-  Fashion,
-  Groceries,
-  Art,
-  Others,
+  Console,
+  Accessoires,
+  Aventure,
+  Combat,
+  Sport,
+  Familiale,
 }
 
 class Product extends Model {

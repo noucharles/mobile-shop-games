@@ -11,7 +11,7 @@ class NothingToShowContainer extends StatelessWidget {
   const NothingToShowContainer({
     Key key,
     this.iconPath = "assets/icons/empty_box.svg",
-    this.primaryMessage = "Nothing to show",
+    this.primaryMessage = "Rien à montrer",
     this.secondaryMessage = "",
   }) : super(key: key);
   @override

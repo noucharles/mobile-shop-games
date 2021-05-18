@@ -67,7 +67,7 @@ class _BodyState extends State<Body> {
                             return Center(
                               child: NothingToShowContainer(
                                 secondaryMessage:
-                                    "Ajoutez votre premier produit à vendre",
+                                    "Ajoutez des produits",
                               ),
                             );
                           }
