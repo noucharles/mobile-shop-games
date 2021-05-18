@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 Future<bool> showConfirmationDialog(
   BuildContext context,
   String messege, {
-  String positiveResponse = "Yes",
-  String negativeResponse = "No",
+  String positiveResponse = "Oui",
+  String negativeResponse = "Non",
 }) async {
   var result = await showDialog(
     context: context,

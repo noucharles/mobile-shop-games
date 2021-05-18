@@ -3,7 +3,7 @@ import 'package:e_commerce_app_flutter/size_config.dart';
 
 const String appName = "237 Gaming";
 
-const kPrimaryColor = Color(0xFFFF7643);
+const kPrimaryColor = Color(0xFF424bce);
 const kPrimaryLightColor = Color(0xFFFFECDF);
 const kPrimaryGradientColor = LinearGradient(
   begin: Alignment.topLeft,

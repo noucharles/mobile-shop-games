@@ -83,7 +83,7 @@ class _BodyState extends State<Body> {
             return Center(
               child: NothingToShowContainer(
                 iconPath: "assets/icons/empty_bag.svg",
-                secondaryMessage: "Commandez quelque chose à montrer ici",
+                secondaryMessage: "Passez une Commande",
               ),
             );
           }
