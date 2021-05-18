@@ -99,7 +99,7 @@ class ProductCard extends StatelessWidget {
                       flex: 5,
                       child: Text.rich(
                         TextSpan(
-                          text: "\₹${product.discountPrice}\n",
+                          text: "${product.discountPrice} FCFA\n",
                           style: TextStyle(
                             color: kPrimaryColor,
                             fontWeight: FontWeight.w700,

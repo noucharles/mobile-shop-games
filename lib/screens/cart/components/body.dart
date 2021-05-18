@@ -355,7 +355,7 @@ class _BodyState extends State<Body> {
     shutBottomSheet();
     final confirmation = await showConfirmationDialog(
       context,
-      "Ceci est juste une application de test de projet, donc aucune interface de paiement n'est disponible.Voulez-vous procéder à la commande fictive de produits?",
+      "Aucune interface de paiement n'est disponible.Voulez-vous procéder à la commande fictive de produits?",
     );
     if (confirmation == false) {
       return;
