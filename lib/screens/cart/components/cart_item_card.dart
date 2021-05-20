@@ -53,7 +53,7 @@ class CartItemCard extends StatelessWidget {
                   SizedBox(height: 10),
                   Text.rich(
                     TextSpan(
-                        text: "${snapshot.data.originalPrice} FCFA",
+                        text: "${snapshot.data.originalPrice.toInt()} FCFA",
                         style: TextStyle(
                           fontWeight: FontWeight.w600,
                           color: kPrimaryColor,

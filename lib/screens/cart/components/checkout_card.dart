@@ -44,7 +44,8 @@ class CheckoutCard extends StatelessWidget {
                   future: UserDatabaseHelper().cartTotal,
                   builder: (context, snapshot) {
                     if (snapshot.hasData) {
-                      final cartTotal = snapshot.data;
+                      final cartTotal1  = snapshot.data;
+                      final cartTotal = cartTotal1.toInt();
                       return Text.rich(
                         TextSpan(text: "Total\n", children: [
                           TextSpan(

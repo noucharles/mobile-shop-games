@@ -16,6 +16,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:future_progress_dialog/future_progress_dialog.dart';
 import 'package:logger/logger.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import '../../../utils.dart';
 
@@ -355,7 +356,7 @@ class _BodyState extends State<Body> {
     shutBottomSheet();
     final confirmation = await showConfirmationDialog(
       context,
-      "Aucune interface de paiement n'est disponible.Voulez-vous procéder à la commande fictive de produits?",
+      "Voulez-vous procéder à la commande du(des) produit(s) ?",
     );
     if (confirmation == false) {
       return;
@@ -378,6 +379,7 @@ class _BodyState extends State<Body> {
               await UserDatabaseHelper().addToMyOrders(orderedProducts);
           if (addedProductsToMyProducts) {
             snackbarmMessage = "Produits commandés avec succès";
+            launchWhatsapp(number: "+237696886292", message: "Hello , je viens de passer une commande de jeux/accessoires sur la plateforme 237 Gaming.\nCode de ma cmmande : ${orderedProducts[0].productUid}.\nHoraire : ${orderedProducts[0].productUid}");
           } else {
             throw "Impossible de commander des produits en raison d'un problème inconnu";
           }
@@ -482,5 +484,11 @@ class _BodyState extends State<Body> {
         );
       },
     );
+  }
+
+  void launchWhatsapp({@required number, @required message}) async {
+    String url = "whatsapp://send?phone=$number&text=$message";
+
+    await canLaunch(url) ? launch(url) : print("Un Probléme est suvenu lors de l'ouverture de Whatsapp");
   }
 }

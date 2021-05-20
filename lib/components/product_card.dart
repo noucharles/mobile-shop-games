@@ -99,7 +99,7 @@ class ProductCard extends StatelessWidget {
                       flex: 5,
                       child: Text.rich(
                         TextSpan(
-                          text: "${product.discountPrice} F\n",
+                          text: "${product.discountPrice.toInt()} F\n",
                           style: TextStyle(
                             color: kPrimaryColor,
                             fontWeight: FontWeight.w700,
@@ -107,7 +107,7 @@ class ProductCard extends StatelessWidget {
                           ),
                           children: [
                             TextSpan(
-                              text: "${product.originalPrice} F",
+                              text: "${product.originalPrice.toInt()} F",
                               style: TextStyle(
                                 color: kTextColor,
                                 decoration: TextDecoration.lineThrough,
