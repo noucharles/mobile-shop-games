@@ -28,6 +28,7 @@ class Body extends StatefulWidget {
 class _BodyState extends State<Body> {
   final CartItemsStream cartItemsStream = CartItemsStream();
   PersistentBottomSheetController bottomSheetHandler;
+
   @override
   void initState() {
     super.initState();
@@ -379,7 +380,10 @@ class _BodyState extends State<Body> {
               await UserDatabaseHelper().addToMyOrders(orderedProducts);
           if (addedProductsToMyProducts) {
             snackbarmMessage = "Produits commandés avec succès";
-            launchWhatsapp(number: "+237696886292", message: "Hello , je viens de passer une commande de jeux/accessoires sur la plateforme 237 Gaming.\nCode de ma cmmande : ${orderedProducts[0].productUid}.\nHoraire : ${orderedProducts[0].productUid}");
+            launchWhatsapp(
+                number: "+237696886292",
+                message:
+                    "Hello , je viens de passer une commande de jeux/accessoires sur la plateforme 237 Gaming.\nCode de ma cmmande : ${orderedProducts[0].productUid}.\nHoraire : ${orderedProducts[0].orderDate}");
           } else {
             throw "Impossible de commander des produits en raison d'un problème inconnu";
           }
@@ -489,6 +493,8 @@ class _BodyState extends State<Body> {
   void launchWhatsapp({@required number, @required message}) async {
     String url = "whatsapp://send?phone=$number&text=$message";
 
-    await canLaunch(url) ? launch(url) : print("Un Probléme est suvenu lors de l'ouverture de Whatsapp");
+    await canLaunch(url)
+        ? launch(url)
+        : print("Un Probléme est suvenu lors de l'ouverture de Whatsapp");
   }
 }
